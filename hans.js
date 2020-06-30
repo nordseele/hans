@@ -22,7 +22,7 @@ var getIPAddresses = function () {
         ipAddresses = [];
 
     for (var deviceName in interfaces) {
-        var addresses = interfaces[deviceName];
+        var addresses = interfaces[deviceName];z
         for (var i = 0; i < addresses.length; i++) {
             var addressInfo = addresses[i];
             if (addressInfo.family === "IPv4" && !addressInfo.internal) {
