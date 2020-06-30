@@ -1,0 +1,8 @@
+{
+    "name": "hans",
+    "version": "0.1",
+    "dependencies": {
+        "i2c-bus": "^5.2.0",
+        "osc": "^2.4.1"
+    }
+}
