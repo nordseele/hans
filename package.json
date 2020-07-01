@@ -1,8 +1,26 @@
 {
-    "name": "hans",
-    "version": "0.1",
-    "dependencies": {
-        "i2c-bus": "^5.2.0",
-        "osc": "^2.4.1"
-    }
+  "name": "hans",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hans.js",
+  "dependencies": {
+    "i2c-bus": "^5.2.0",
+    "osc": "^2.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node hans.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nordseele/hans_.git"
+  },
+  "keywords": [],
+  "author": "M.Budde / Nordseele",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nordseele/hans_/issues"
+  },
+  "homepage": "https://github.com/nordseele/hans_#readme"
 }
