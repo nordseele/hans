@@ -14,13 +14,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nordseele/hans_.git"
+    "url": "git+https://github.com/nordseele/hans.git"
   },
   "keywords": [],
   "author": "M.Budde / Nordseele",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nordseele/hans_/issues"
+    "url": "https://github.com/nordseele/hans/issues"
   },
-  "homepage": "https://github.com/nordseele/hans_#readme"
+  "homepage": "https://github.com/nordseele/hans#readme"
 }
