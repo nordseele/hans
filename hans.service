@@ -3,7 +3,7 @@ Description=Hans
 After=network.target
 
 [Service]
-WorkingDirectory=/home/pi/hans
+WorkingDirectory=/home/pi/hans_
 ExecStart=/usr/bin/npm start
 Restart=on-failure
 User=pi
