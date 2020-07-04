@@ -9,7 +9,7 @@ Usage : /module/number/command/args
 
 const osc = require('osc');
 const i2c = require('i2c-bus');
-const listening_port = 9998; // UDP receive port
+const listening_port = 9301; // UDP receive port
 const busno = 1; // i2c bus number
 const clamp = (num, a, b) => Math.max(Math.min(num, Math.max(a, b)), Math.min(a, b));
 const modules = require('./ii/commands');
@@ -106,7 +106,7 @@ sendMessage(message);
 
 const sendMessage = (message) => {
     const i2c1 = i2c.openSync(busno);
-    i2c1.writeI2cBlockSync(message.address, message.command, message.payload.length, message.payload); //syn method, could switch to async w/ callback 
+    i2c1.writeI2cBlockSync(message.address, message.command, message.payload.length, message.payload); //sync method, could switch to async w/ callback 
     i2c1.closeSync(); 
 }
 
