@@ -8,7 +8,7 @@ List of issues and bugs:
 
 Research notes: 
 
-[Read the notes.](/doc.notes.md)
+[Read the notes.](/doc/notes.md)
 
 Development plans:
 
