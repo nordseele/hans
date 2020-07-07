@@ -1,6 +1,7 @@
 #### Hardware connections
 
 <img src="/doc/images/i2c_gpio.png" alt="i2c_GPIO" style="zoom:50%;" />
+
 *Software i2c overlay - this requires an external circuit with two 4.7k pull-up resistors. See issue with the ER-301.*
 
 ##### ⚠️ Caution: 
