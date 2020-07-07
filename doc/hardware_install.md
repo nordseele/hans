@@ -1,4 +1,4 @@
-#### Hardware connections
+## Hardware connections
 
 <img src="/doc/images/i2c_gpio.png" alt="i2c_GPIO" style="zoom:50%;" />
 
