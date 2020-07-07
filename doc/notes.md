@@ -1,6 +1,26 @@
+#### List of issues and bugs:
+
+[Read the full list of issues.](https://github.com/nordseele/hans/issues) 
+
+#### Research notes: 
+
+[Read the notes.](/doc/notes.md)
+
+#### Development plans:
+
+[Tracker](/doc/tracker.md) 
+
+
+#### Usage:
+
+[Tracker](/doc/usage.md) 
+
+____
+
+
 ### Disclaimer : 
 
-⚠️ **This project is experimental and is still being developed.**
+⚠️ **This project is experimental and is still being developed**
 
 ❌ An issue prevents the ER-301 from booting up normally if both the Raspberry Pi and the ER-301 aren't started simultaneously.  
 
@@ -10,16 +30,23 @@ You must pay close attention to the wiring between the GPIO of the Raspberry Pi 
 
 The app itself won't damage the modules but if you mess up the wiring between the RPi and the Eurorack modules, you may seriously damage them.
 
+____
 
 ### Background 
 
 [Read on Lines](https://llllllll.co/t/controlling-txo-er-301-etc-wirelessly-using-osc-node-and-a-rpi/33680)
+
+
+____
 
 ### Aim
 
 - Wireless connection between an iPad or other OSC or Midi Ble capable device and the Eurorack modules capable of communicating via i2c (and Monome ii protocol). => OSC via Wifi && Midi over Bluetooth. 
 - RPI should be powered by a Eurorack case => Raspberry Pi Zero W = power, connectivity & low consumption 
 - Simple code and effectiveness => Node.js
+
+
+____
 
 ### Log
 
