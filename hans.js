@@ -1,9 +1,10 @@
 /*
 ===================================
-Hans / v0.1
+Hans / v0.0.1
 OSC to i2c app - ER-301, TXo, etc
 Nordseele 2020 
 Usage : /module/number/command/args
+Status: Experimental, proof of concept
 ===================================
 */
 
@@ -123,3 +124,7 @@ const sendMessage = (message) => {
 
 
 
+/* Todo
+- Code needs to be cleaned up. 
+- Move const fct to different files
+*/
