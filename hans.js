@@ -125,6 +125,6 @@ const sendMessage = (message) => {
 
 
 /* Todo
-- Code needs to be cleaned up. 
+- Code needs to be cleaned up. adjust scope for old fct.
 - Move const fct to different files
 */
