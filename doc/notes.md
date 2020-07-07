@@ -59,7 +59,7 @@ _____
 
 - The boot time of RPI Zero W is approx. 50 seconds. This needs to be improved. 
 - ⚠️ Connecting the Raspberry PI directly to the ER-301 module or even to the same i2c bus is a source of problems. If the two devices are not started simultaneously, or if the ER-301 is powered on after the RPI, the Raspberry Pi will prevent the ER-301 from starting normally. To overcome this problem, it is prefereable to create an external circuit including two 4.7k pull-up resistors and use another set of GPIO on the Raspberry for i2c (aka. "Software i2c overlay") rather than the "hardware i2c gpio".
-- The latency will vary depending on the network, router etc. If nothing is sent during a long period, the network tends to "fall asleep", the first OSC message you send will be sent with an abnormal latency. Optimal and regular latency and response is achieved by setting up an ad-hoc network on the RPI. 
+- The latency will vary depending on the network, router etc. If nothing is sent during a long period, the network tends to "fall asleep", the first OSC message you send will be sent with an abnormal latency. Optimal and regular (very good) latency and response is achieved by setting up an ad-hoc network on the RPI. 
 - Hans only sends "setters" and cannot retrieve from modules aka. "getters" 
 
 [Read the full list of issues.](https://github.com/nordseele/hans/issues) 
