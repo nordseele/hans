@@ -43,6 +43,48 @@ const modules = {
       }
     },
 
+    ansible: {
+      address: [0x20, 0x21, 0x22, 0x23],
+      commands: {
+        trigger: {
+          cmd: 1,
+          arg: [{name: 'channel', type: 'u8'}, {name: 'state', type: 'u8'}]
+        },
+        trigger_toggle: {
+          cmd: 2,
+          arg: [{name: 'channel', type: 'u8'}]
+        },
+        trigger_pulse: {
+          cmd: 3,
+          arg: [{name: 'channel', type: 'u8'}]
+        },
+        trigger_time: {
+          cmd: 4,
+          arg: [{name: 'channel', type: 'u8'}, {name: 'time', type: 'u16'}]
+        },
+        tr_polarity: {
+          cmd: 5,
+          arg: [{name: 'channel', type: 'u8'}, {name: 'polarity', type: 'u8'}]
+        },
+        cv: {
+          cmd: 6,
+          arg: [{name: 'channel', type: 'u8'}, {name: 'volts', type: 's16V'}]
+        },
+        cv_slew: {
+          cmd: 7,
+          arg: [{name: 'channel', type: 'u8'}, {name: 'time', type: 'u16'}]
+        },
+        cv_set: {
+          cmd: 9,
+          arg: [{name: 'channel', type: 'u8'}, {name: 'volts', type: 's16V'}]
+        },
+        cv_offset: {
+          cmd: 8,
+          arg: [{name: 'channel', type: 'u8'}, {name: 'volts', type: 's16V'}]
+        }
+      }
+    },
+
     crow: {
       address: [0x01],
       commands: {
