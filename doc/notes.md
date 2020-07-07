@@ -1,6 +1,6 @@
 ### Status : 
 
-⚠️ **This project is experimental and is still bein developed.**
+⚠️ **This project is experimental and is still being developed.**
 
 ❌ An issue prevents the ER-301 from booting up normally if both the Raspberry Pi and the ER-301 aren't started simultaneously (see "known issues" below).  
 

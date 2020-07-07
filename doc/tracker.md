@@ -1,7 +1,6 @@
 ## [Tracker](#tracker)
 
 
-
 #### Tasks:
 
 <u>In progress:</u>
@@ -9,7 +8,6 @@
 - Notes and CV conversion
 - Custom hat (double i2c out, pull-up resistors and power from 5V rail)
 - Better error handling 
-
 
 
 <u>Very likely:</u>
