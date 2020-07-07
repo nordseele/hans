@@ -116,7 +116,7 @@ const modules = {
     },
 
     jf: {
-      address: [],
+      address: [0x70,0x75],
       commands: {
         trigger: {
           cmd: 1,
