@@ -13,17 +13,17 @@ The app itself won't damage your modules but if you mess up the wiring between t
 If you have no prior experience with the GPIO of a Raspberry PI, it is recommended to avoid plugging one to your expensive Eurorack modules. You may damage them.
 
 
-#### Background 
+### Background 
 
-. . . 
+[Read on Lines](https://llllllll.co/t/controlling-txo-er-301-etc-wirelessly-using-osc-node-and-a-rpi/33680)
 
-#### Aim
+### Aim
 
 - Wireless connection between the Eurorack modules capable of communicating via i2c (and Monome ii protocol). => OSC via Wifi && Midi over Bluetooth. 
 - RPI should be powered by a Eurorack case => Raspberry Pi Zero W = power, connectivity & low consumption 
 - Simple code and effectiveness => Node.js
 
-#### Log
+### Log
 
 07/07/20
 . . . . . .
