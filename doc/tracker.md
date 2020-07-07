@@ -7,7 +7,7 @@
 - Internal (0 - 127) notes and CV conversion (similar to N and VV of Teletype)
 - Web interface (Settings, console, Ad-hoc network config, switch between network and ad-hoc via node app)
 - Bluetooth LE Midi
-- More follower modules
+- More follower modules (Disting EX, W/2)
 - Custom functions
 - Support for "getters" commands
 - Support for "multi-masters" bus
