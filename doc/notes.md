@@ -27,6 +27,7 @@ If you have no prior experience with the GPIO of a Raspberry PI, it is recommend
 
 07/07/20
 . . . . . .
+
 I have a prototype PCB design ready to be sent for production. I want to provide this as an option for safer connections between the Pi and the modules. It features a double i2c IO (regular hardware IO + software i2c on another set of GPIO) and a "safe" 5V input.
 _ _ _
 
