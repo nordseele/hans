@@ -2,15 +2,13 @@
 
 ⚠️ **This project is experimental and is still being developed.**
 
-❌ An issue prevents the ER-301 from booting up normally if both the Raspberry Pi and the ER-301 aren't started simultaneously (see "known issues" below).  
+❌ An issue prevents the ER-301 from booting up normally if both the Raspberry Pi and the ER-301 aren't started simultaneously.  
 
 Until an hardware solution is created, it is recommended to avoid connecting the ER-301 to the i2c bus. 
 
 You must pay close attention to the wiring between the GPIO of the Raspberry Pi and your modules. 
 
-The app itself won't damage your modules but if you mess up the wiring between the RPi and the Eurorack modules, you may seriously damage them. Do it at your own risk.
-
-If you have no prior experience with the GPIO of a Raspberry PI, it is recommended to avoid plugging one to your expensive Eurorack modules. You may damage them.
+The app itself won't damage the modules but if you mess up the wiring between the RPi and the Eurorack modules, you may seriously damage them.
 
 
 ### Background 
@@ -28,8 +26,6 @@ If you have no prior experience with the GPIO of a Raspberry PI, it is recommend
 ##### 07/07/2020
 
 I have a prototype PCB design ready to be sent for production. I want to provide this as an option for safer connections between the Pi and the modules. It features a double i2c IO (regular hardware IO + software i2c on another set of GPIO) and a "safe" 5V input.
-_ _ _
-
 
 
 _____
@@ -48,7 +44,7 @@ ____
 
 #### Important:
 
-The Raspberry Pi acts as a "leader" on the i2c bus, it must be the only "leader" on this bus. This means that the Raspberry Pi and a Teletype can not co-exist on the same bus[^1]. Hopefully this might be possible soon.
+The Raspberry Pi acts as a "leader" on the i2c bus, it must be the only "leader" on this bus. This means that the Raspberry Pi and a Teletype can not co-exist on the same bus. Hopefully this might be possible soon.
 
 This configuration has only been tested with an ER-301 and a TXo on the bus, they are both "followers". The configuration has not been tested on a RPI 4, only a RPI3B and a RPI Zero. The installation notes may vary for a RPI4.
 
