@@ -1,17 +1,17 @@
 ## [Tracker](#tracker)
 
 
-#### Tasks:
+### Tasks:
 
-<u>In progress:</u>
+#### In progress:
 
-- Notes and CV conversion
 - Custom hat (double i2c out, pull-up resistors and power from 5V rail)
 - Better error handling 
 
 
-<u>Very likely:</u>
+#### Very likely:
 
+- Notes and CV conversion
 - Web interface (Settings, console, Ad-hoc network config and switch between network and ad-hoc via node app)
 - Bluetooth LE Midi
 - Custom functions
@@ -19,8 +19,7 @@
 - Support for multi-masters bus
 
 
-
-<u>Under consideration:</u>
+#### Under consideration:
 
 - Serial OSC
 - Midi with custom mapping
