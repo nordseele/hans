@@ -6,4 +6,4 @@
 
 [Read the full list of issues.](https://github.com/nordseele/hans/issues) 
 
-[Tracker](https://github.com/nordseele/hans/doc/tracker.md) 
+[Tracker](/doc/tracker.md) 
