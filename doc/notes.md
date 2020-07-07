@@ -1,10 +1,6 @@
-
-
-____
-
 ### Status : 
 
-⚠️ **This project is experimental and is still being developed**
+⚠️ **This project is experimental and is still in development.**
 
 ❌ An issue prevents the ER-301 from booting up normally if both the Raspberry Pi and the ER-301 aren't started simultaneously (see "known issues" below).  
 
@@ -23,8 +19,6 @@ _____
 - The latency will vary depending on the network, router etc. If nothing is sent during a long period, the network tends to "fall asleep", the first OSC message you send will be sent with an abnormal latency. Optimal and regular latency and response is achieved by setting up an ad-hoc network on the RPI. 
 - Hans only sends "setters" and cannot retrieve from modules aka. "getters" 
 
-Read the full list of issues. 
-
 
 ____
 
@@ -33,7 +27,4 @@ ____
 The Raspberry Pi acts as a "leader" on the i2c bus, it must be the only "leader" on this bus. This means that the Raspberry Pi and a Teletype can not co-exist on the same bus[^1]. Hopefully this might be possible soon.
 
 This configuration has only been tested with an ER-301 and a TXo on the bus, they are both "followers". The configuration has not been tested on a RPI 4, only a RPI3B and a RPI Zero. The installation notes may vary for a RPI4.
-
-
-____
 
