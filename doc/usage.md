@@ -4,7 +4,7 @@ The OSC messages received by Hans must respect the following format and the numb
 
  `/module/number/command/arg1 arg2 ` 
 
-Where ***module*** stands the module name (ex: er301), ***number*** is the unit number in the case you own several modules of the same type (For an ER-301, you need to activate the Teletype control in the admin menu and set the address of the module | for a Txo you need to adjust the position of the jumper), *command* is the command name (ex: cv_set) and ***arg*** is the list of arguments separated by a space and usually starting with the port number.
+Where ***module*** stands for the module name (ex: er301), ***number*** is the unit number in the case you own several modules of the same type (For an ER-301, you need to activate the Teletype control in the admin menu and set the address of the module | for a Txo you need to adjust the position of the jumper), *command* is the command name (ex: cv_set) and ***arg*** is the list of arguments separated by a space and usually starting with the port number.
 
 <u>Examples:</u>
 
