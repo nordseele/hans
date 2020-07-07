@@ -18,3 +18,4 @@
 - Serial OSC
 - Midi with custom mapping
 - 1u panel and PCB
+- bring Hans out of the Eurorack case (P2P net tbd)
