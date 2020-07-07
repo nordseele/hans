@@ -48,11 +48,11 @@ const modules = {
       commands: {
         output: {
           cmd: 1,
-          arg: [{name: 'channel', type: 'u8'}, {name: 'level', type: 's16V'}]
+          arg: [{name: 'channel', type: 's8'}, {name: 'level', type: 's16V'}]
         },
         slew: {
           cmd: 2,
-          arg: [{name: 'channel', type: 'u8'}, {name: 'ltime', type: 's16'}]
+          arg: [{name: 'channel', type: 's8'}, {name: 'time', type: 's16'}]
         },        
         call1: {
           cmd: 4,
@@ -68,8 +68,71 @@ const modules = {
         },        
         call2: {
           cmd: 7,
-          arg: [{name: 'arg1', type: 's16'}, {name: 'arg2', type: 's16'},, {name: 'arg3', type: 's16'}, , {name: 'arg4', type: 's16'}]
+          arg: [{name: 'arg1', type: 's16'}, {name: 'arg2', type: 's16'}, {name: 'arg3', type: 's16'}, {name: 'arg4', type: 's16'}]
         }        
+      }
+    },
+
+    jf: {
+      address: [],
+      commands: {
+        trigger: {
+          cmd: 1,
+          arg: [{name: 'channel', type: 's8'}, {name: 'state', type: 's8'}]
+        },
+        run_mode: {
+          cmd: 2,
+          arg: [{name: 'mode', type: 's8'}]
+        },
+        run: {
+          cmd: 3,
+          arg: [{name: 'volts', type: 's16V'}]
+        },
+        transpose: {
+          cmd: 4,
+          arg: [{name: 'pitch', type: 's16V'}]
+        },
+        vtrigger: {
+          cmd: 5,
+          arg: [{name: 'channel', type: 's8'}, {name: 'level', type: 's16V'}]
+        },
+        mode: {
+          cmd: 6,
+          arg: [{name: 'mode', type: 's8'}]
+        },
+        tick: {
+          cmd: 7,
+          arg: [{name: 'clock or bpm', type: 's8'}]
+        },
+        play_voice: {
+          cmd: 8,
+          arg: [{name: 'pitch or divs', type: 's16V'}, {name: 'level or repeats', type: 's16V'}]
+        },
+        play_note: {
+          cmd: 9,
+          arg: [{name: 'pitch or divs', type: 's16V'}, {name: 'level or repeats', type: 's16V'}]
+        },
+        god_mode: {
+          cmd: 10,
+          arg: [{name: 'state', type: 's8'}]
+        },
+        retune: {
+          cmd: 11,
+          arg: [{name: 'channel', type: 's8'}, {name: 'numerator', type: 's8'}, {name: 'denominator', type: 's8'}]
+        },
+        quantize: {
+          cmd: 12,
+          arg: [{name: 'divisions', type: 's8'}]
+        },
+        pitch: {
+          cmd: 13,
+          arg: [{name: 'channel', type: 's8'}, {name: 'pitch', type: 's16V'}]
+        },
+        address: {
+          cmd: 14,
+          arg: [{name: 'index', type: 's8'}]
+        },
+
       }
     },
 
