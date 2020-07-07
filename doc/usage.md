@@ -18,7 +18,7 @@ or
 
 [Read the full list of commands for the TXo.](https://github.com/bpcmusic/telex/blob/master/commands.md) Bear in mind that the . must be replaced by an underscore _ . 
 
-If the number of arguments being sent does not match what the "command" expects, nothing will be sent to the "follower" module. 
+If the number of arguments sent does not match what the "command" expects, nothing will be sent to the "follower" module. 
 
 <u>Example:</u>
 
