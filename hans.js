@@ -9,10 +9,11 @@ Usage : /module/number/command/args
 
 const osc = require('osc');
 const i2c = require('i2c-bus');
-const listening_port = 9301; // UDP receive port
-const busno = 1; // i2c bus number
+//const listening_port = 9301; // UDP receive port
+//const busno = 1; // i2c bus number
 const clamp = (num, a, b) => Math.max(Math.min(num, Math.max(a, b)), Math.min(a, b));
 const modules = require('./ii/commands');
+const settings = require('settings')
 
 // OSC server over UDP
 
@@ -36,13 +37,13 @@ var getIPAddresses = function () {
 
 var udpPort = new osc.UDPPort({
     localAddress: "0.0.0.0",
-    localPort: listening_port // change listening port
+    localPort: settings.listening_port 
 });
 
 udpPort.on("ready", function () {
     var ipAddresses = getIPAddresses();
 
-    console.log("Hello Hans ! Listening for OSC over UDP.");
+    console.log("Listening for OSC over UDP.");
     ipAddresses.forEach(function (address) {
         console.log(" Host:", address + ", Port:", udpPort.options.localPort);
     });
@@ -84,13 +85,32 @@ if (m.args.length != modules[m.device].commands[m.command].arg.length) {
     let bytes = [];
     let args = modules[m.device].commands[m.command].arg;
     for (let i in args) {
-    let size = args[i].type == 'u8' ? 1 : 2;
+    let size = args[i].type == 'u8' || 's8' ? 1 : 2;
     let buf = Buffer.alloc(size);
+
+    switch (args[i].type) {
+        case 'u8':
+            buf.writeUInt8(clamp(0, 255, m.args[i]));
+            break;
+        case 's8':
+            buf.writeInt8(clamp(-128, 127, m.args[i]));
+            break;
+        case 's16':
+            buf.writeInt16BE(clamp(-16384, 16383, m.args[i])); // clamp to the TT values
+            break;
+        case 's16V': // Do something special for s16V ? 
+            buf.writeInt16BE(clamp(-16384, 16383, m.args[i])); 
+            break;
+    }
+
+    /*
     if (size == 1) {
         buf.writeInt8(clamp(-128, 127, m.args[i]));
     } else {
         buf.writeInt16BE(clamp(-16384, 16383, m.args[i])); // clamp to the TT values
     }
+    */
+
     bytes.push(buf);
 }
     message.payload = Buffer.concat(bytes); // we need to concat all the buffers before we send them to the i2c node.
@@ -105,7 +125,7 @@ sendMessage(message);
 // Send i2c message
 
 const sendMessage = (message) => {
-    const i2c1 = i2c.openSync(busno);
+    const i2c1 = i2c.openSync(settings.busno);
     i2c1.writeI2cBlockSync(message.address, message.command, message.payload.length, message.payload); //sync method, could switch to async w/ callback 
     i2c1.closeSync(); 
 }
