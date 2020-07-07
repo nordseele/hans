@@ -1,8 +1,6 @@
 ## [Tracker](#tracker)
 
 
-### Tasks:
-
 #### In progress:
 
 - Custom hardware PCB (double i2c out, pull-up resistors and power from 5V rail). 
