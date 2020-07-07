@@ -19,7 +19,7 @@ If you have no prior experience with the GPIO of a Raspberry PI, it is recommend
 
 ### Aim
 
-- Wireless connection between the Eurorack modules capable of communicating via i2c (and Monome ii protocol). => OSC via Wifi && Midi over Bluetooth. 
+- Wireless connection between an iPad or other OSC or Midi Ble capable device and the Eurorack modules capable of communicating via i2c (and Monome ii protocol). => OSC via Wifi && Midi over Bluetooth. 
 - RPI should be powered by a Eurorack case => Raspberry Pi Zero W = power, connectivity & low consumption 
 - Simple code and effectiveness => Node.js
 
