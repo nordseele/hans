@@ -1,9 +1,15 @@
-## Status : 
+## Status : experimental
 
-⚠️ **This project is experimental and is still being developed and tested**
+⚠️ **This project is still being developed and tested**
 
-❌ An issue prevents the ER-301 from booting up normally if both the Raspberry Pi and the ER-301 aren't started simultaneously (see "known issues" below). Until an hardware solution is created, it is recommended to avoid connecting the ER-301 to the i2c bus. 
+List of issues and bugs:
 
 [Read the full list of issues.](https://github.com/nordseele/hans/issues) 
+
+Research notes: 
+
+[Read the notes.](/doc.notes.md)
+
+Development plans:
 
 [Tracker](/doc/tracker.md) 

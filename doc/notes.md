@@ -1,4 +1,4 @@
-### Status : 
+### Disclaimer : 
 
 ⚠️ **This project is experimental and is still being developed.**
 
@@ -9,6 +9,28 @@ Until an hardware solution is created, it is recommended to avoid connecting the
 You must pay close attention to the wiring between the GPIO of the Raspberry Pi and your modules. 
 
 The app itself won't damage your modules but if you mess up the wiring between the RPi and the Eurorack modules, you may seriously damage them. Do it at your own risk.
+
+If you have no prior experience with the GPIO of a Raspberry PI, it is recommended to avoid plugging one to your expensive Eurorack modules. You may damage them.
+
+
+#### Background 
+
+. . . 
+
+#### Aim
+
+- Wireless connection between the Eurorack modules capable of communicating via i2c (and Monome ii protocol). => OSC via Wifi && Midi over Bluetooth. 
+- RPI should be powered by a Eurorack case => Raspberry Pi Zero W = power, connectivity & low consumption 
+- Simple code and effectiveness => Node.js
+
+#### Log
+
+07/07/20
+. . . . . .
+I have a prototype PCB design ready to be sent for production. I want to provide this as an option for safer connections between the Pi and the modules. It features a double i2c IO (regular hardware IO + software i2c on another set of GPIO) and a "safe" 5V input.
+_ _ _
+
+
 
 _____
 
