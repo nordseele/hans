@@ -11,7 +11,7 @@
 
 #### Usage:
 
-[Tracker](/doc/usage.md) 
+[Usage](/doc/usage.md) 
 
 ____
 
