@@ -1,5 +1,5 @@
-## Status : ⚠️ experimental
+## Status: experimental
 
-**This project is still being developed and tested**
+**⚠️ This project is still being developed**
 
 [Research notes](/doc/notes.md) 
