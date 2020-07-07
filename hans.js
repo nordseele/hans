@@ -9,8 +9,6 @@ Usage : /module/number/command/args
 
 const osc = require('osc');
 const i2c = require('i2c-bus');
-//const listening_port = 9301; // UDP receive port
-//const busno = 1; // i2c bus number
 const clamp = (num, a, b) => Math.max(Math.min(num, Math.max(a, b)), Math.min(a, b));
 const modules = require('./ii/commands');
 const settings = require('./settings');
@@ -73,7 +71,7 @@ udpPort.on("error", function (err) {
 udpPort.open();
 
 
-// Prepare i2c buffer
+// Prepare the i2c buffer
 
 const prepareMessage = (msg) => { 
     let m = msg;
@@ -85,34 +83,27 @@ if (m.args.length != modules[m.device].commands[m.command].arg.length) {
     let bytes = [];
     let args = modules[m.device].commands[m.command].arg;
     for (let i in args) {
-    let size = args[i].type == 'u8' || 's8' ? 1 : 2;
-    let buf = Buffer.alloc(size);
+        let type = args[i].type;
+        let size = type == 'u8' ? 1 : type == 's8' ? 1 : 2;
+        let buf = Buffer.alloc(size);
 
-    switch (args[i].type) {
-        case 'u8':
-            buf.writeUInt8(clamp(0, 255, m.args[i]));
-            break;
-        case 's8':
-            buf.writeInt8(clamp(-128, 127, m.args[i]));
-            break;
-        case 's16':
-            buf.writeInt16BE(clamp(-16384, 16383, m.args[i])); // clamp to the TT values
-            break;
-        case 's16V': // Do something special for s16V ? 
-            buf.writeInt16BE(clamp(-16384, 16383, m.args[i])); 
-            break;
+        switch (args[i].type) {
+            case 'u8':
+                buf.writeUInt8(clamp(0, 255, m.args[i]));
+                break;
+            case 's8':
+                buf.writeInt8(clamp(-128, 127, m.args[i]));
+                break;
+            case 's16':
+                buf.writeInt16BE(clamp(-16384, 16383, m.args[i])); // clamp to the TT values
+                break;
+            case 's16V': // Do something special for s16V ? 
+                buf.writeInt16BE(clamp(-16384, 16383, m.args[i])); 
+                break;
+        }
+
+        bytes.push(buf);
     }
-
-    /*
-    if (size == 1) {
-        buf.writeInt8(clamp(-128, 127, m.args[i]));
-    } else {
-        buf.writeInt16BE(clamp(-16384, 16383, m.args[i])); // clamp to the TT values
-    }
-    */
-
-    bytes.push(buf);
-}
     message.payload = Buffer.concat(bytes); // we need to concat all the buffers before we send them to the i2c node.
 }
 
