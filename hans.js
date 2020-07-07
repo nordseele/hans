@@ -13,7 +13,7 @@ const i2c = require('i2c-bus');
 //const busno = 1; // i2c bus number
 const clamp = (num, a, b) => Math.max(Math.min(num, Math.max(a, b)), Math.min(a, b));
 const modules = require('./ii/commands');
-const settings = require('settings')
+const settings = require('./settings');
 
 // OSC server over UDP
 
