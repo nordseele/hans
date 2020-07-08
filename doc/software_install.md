@@ -1,4 +1,4 @@
-## Software install - A "headless" RPI
+# Software install - A "headless" RPI
 
 
 ## Part 1. Install Raspberry OS, enable SSH, enable i2c, install Git etc.
