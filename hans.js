@@ -38,10 +38,12 @@ const udpPort = new osc.UDPPort({
 
 udpPort.on("ready", function () {
     let ipAddresses = getIPAddresses();
+    console.log("H A N S");
     console.log("Listening for OSC over UDP.");
     ipAddresses.forEach(function (address) {
-        console.log(" Host:", address + ", Port:", udpPort.options.localPort);
+        console.log("Host:", address + ", Port:", udpPort.options.localPort);
     });
+    console.log("i2c bus number:", settings.busno);
 });
 
 udpPort.on("message", function (oscMessage) {

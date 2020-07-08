@@ -28,6 +28,10 @@ dtoverlay=i2c-gpio,bus=3,i2c_gpio_delay_us=2,i2c_gpio_sda=23,i2c_gpio_scl=24
 
 We also need to edit `/hans/settings.js` and change the bus number to 3.
 
+Don't connect the gpio yet.
+
+Reboot and `ls /dev/i2c*` The terminal should return `/dev/i2c-1  /dev/i2c-3`
+
 [More infos about the hardware i2c vs software i2c on RPI](https://github.com/fivdi/i2c-bus/blob/master/doc/raspberry-pi-software-i2c.md)
 
 ____
