@@ -4,13 +4,12 @@
 ##### ⚠️ Important: 
 You should never "hot-wire" the i2c bus. Both the Raspberry PI and your Eurorack case should be turned <u>off</u> before plugging and manipulating the wires.  
 
-
-
-⚠️ Pay attention to the orientation of the board and headers in this picture. Double-check that the connections are correct. 
+Pay attention to the orientation of the board and headers in this picture. Double-check that the connections are correct. 
 
 _____
 
-## Optimal solution: software i2c and an external pull-up resistors circuit
+## Optimal solution: software i2c + external pull-up resistors circuit
+
 
 <img src="/doc/images/software_i2c_gpio.png" alt="i2c_GPIO" style="zoom:50%;" />
 
@@ -53,4 +52,9 @@ This is the full GPIO pinout diagram of a Raspberry PI Zero or RPI 3. Be extreme
 <img src="/doc/images/rpi_gpio_pinout.png" alt="rpiZ-08" style="zoom: 50%;" />
 
 *Raspberry Pi GPIO pinout*
+
+
+### Links
+
+https://hackaday.io/project/161718-pca9548a-i2c-mux-device-overlay-for-pi-gpio-i2c/log/154260-the-virtues-of-software-i2c-on-the-raspberry-pi
 
