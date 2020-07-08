@@ -24,7 +24,7 @@ ____
 
 Until an hardware solution is created, it is recommended to avoid connecting the ER-301 to the i2c bus. 
 
-If you have no prior experience with the Raspberry GPIO or if you're not sure, do not use this project or try anything until an hardware solution exists. 
+If you have no prior experience with the Raspberry GPIO or if you're not sure, it's prefearable to avoid trying anything until a simple hardware solution exists. 
 
 You must pay close attention to the wiring between the GPIO of the Raspberry Pi and your modules. 
 
