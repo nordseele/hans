@@ -24,15 +24,25 @@ ____
 
 Until an hardware solution is created, it is recommended to avoid connecting the ER-301 to the i2c bus. 
 
+If you have no prior experience with the Raspberry GPIO or if you're not sure, do not use this project or try anything until an hardware solution exists. 
+
 You must pay close attention to the wiring between the GPIO of the Raspberry Pi and your modules. 
 
 The app itself won't damage the modules but if you mess up the wiring between the RPi and the Eurorack modules, you may seriously damage them.
 
 ____
 
+### Important
+
+The Raspberry Pi acts as a "leader" on the i2c bus, it must be the only "leader" on this bus. This means that the Raspberry Pi and a Teletype can not co-exist on the same bus. Hopefully this might be possible soon.
+
+This configuration has only been tested with an ER-301 and a TXo on the bus, they are both "followers". The configuration has not been tested on a RPI 4, only a RPI3B and a RPI Zero. The installation notes may vary for a RPI4.
+
+____
+
 ### Background 
 
-[Read on Lines](https://llllllll.co/t/controlling-txo-er-301-etc-wirelessly-using-osc-node-and-a-rpi/33680)
+[Read on the Lines forum](https://llllllll.co/t/controlling-txo-er-301-etc-wirelessly-using-osc-node-and-a-rpi/33680)
 
 
 ____
@@ -65,11 +75,4 @@ _____
 [Read the full list of issues.](https://github.com/nordseele/hans/issues) 
 
 
-____
-
-### Important
-
-The Raspberry Pi acts as a "leader" on the i2c bus, it must be the only "leader" on this bus. This means that the Raspberry Pi and a Teletype can not co-exist on the same bus. Hopefully this might be possible soon.
-
-This configuration has only been tested with an ER-301 and a TXo on the bus, they are both "followers". The configuration has not been tested on a RPI 4, only a RPI3B and a RPI Zero. The installation notes may vary for a RPI4.
 
