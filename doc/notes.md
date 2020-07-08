@@ -36,7 +36,7 @@ ____
 
 The Raspberry Pi acts as a "leader" on the i2c bus, it must be the only "leader" on this bus. This means that the Raspberry Pi and a Teletype can not co-exist on the same bus. Hopefully this might be possible soon.
 
-This configuration has only been tested with an ER-301 and a TXo on the bus, they are both "followers". The configuration has not been tested on a RPI 4, only a RPI3B and a RPI Zero. The installation notes may vary for a RPI4.
+This configuration has only been tested with an ER-301 and a TXo on the bus, they are both "followers". The configuration has not been tested on a RPI 4, only with a RPI3B and with a RPI Zero. The installation notes may vary for a RPI4.
 
 ____
 
