@@ -50,6 +50,8 @@ If you want to learn more about i2c, [read this](https://llllllll.co/t/a-users-g
 
 The <u>SDA I2C is GPIO2 (which is pin 3)</u> and the <u>SCL I2C is GPIO3 (which is pin 5)</u>. Use <u>pin 9 for the GROUND</u> (GND).
 
+We also need to edit `/hans/settings.js` and change the bus number to 1.
+
 This is the full GPIO pinout diagram of a Raspberry PI Zero or RPI 3. Be extremely careful. You may seriously damage the Raspberry Pi and your modules if you connect a wire to the wrong GPIO. If you decide to try, you do this at your own risk. 
 
 
