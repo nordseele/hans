@@ -1,7 +1,7 @@
-## Software install - headless rpi
+## Software install - A "headless" RPI
 
 
-#### Part 1. Install Raspberry OS, enable SSH, enable i2c, install Git etc.
+## Part 1. Install Raspberry OS, enable SSH, enable i2c, install Git etc.
 
 The installation begins like any fresh headless "Raspi" install: 
 
@@ -12,7 +12,7 @@ https://www.raspberrypi.org/downloads/
 Mount the SD Card and enter the following command
 
 ```shell
-cd /volumes/boot && touch SSH
+cd /volumes/boot && touch ssh
 ```
 
 This will create an empty SSH file at the root of your SD and will enable SSH on the RPI.
@@ -65,7 +65,7 @@ Exit *raspi-config* and reboot when prompted.
 
 
 
-#### Part 2. Install Node.js
+## Part 2. Install Node.js
 
 **On a Raspberry Pi Zero W (Arm6)** 
 
@@ -94,7 +94,7 @@ sudo ln -s /usr/bin/npm /usr/local/bin/npm
 
 
 
-#### Part 5. Install Hans (the node.js app)
+## Part 5. Install Hans (the node.js app)
 
 Check if node is correctly installed `node -v` `npm -v`  If it doesn't return any version number, try to reboot first. 
 
@@ -106,7 +106,7 @@ cd && git clone https://github.com/nordseele/hans.git
 
 
 
-#### Part 6. Running the app as a service (recommended)
+## Part 6. Running the app as a service (recommended)
 
 We want to make Hans start automatically when you power on the Pi. We run the following commands. 
 
@@ -130,7 +130,7 @@ Or from the root `cd /hans && npm start`
 
 
 
-#### Parts 7. Setting up the ad-hoc network (optional but recommended) 
+## Parts 7. Setting up the ad-hoc network (optional but recommended) 
 
 Setting up a ad-hoc network will greatly improve the latency and response. 
 

@@ -1,4 +1,4 @@
-## [Usage](#usage)
+## Usage
 
 The OSC messages received by Hans must respect the following format and the number of arguments must match the number expected by each command. 
 

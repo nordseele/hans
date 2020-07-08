@@ -1,4 +1,4 @@
-## Research notes
+## Notes
 
 #### List of issues and bugs:
 
@@ -55,7 +55,7 @@ I have a prototype PCB design ready to be sent for production. I want to provide
 
 _____
 
-#### Known issues: 
+### Known issues 
 
 - The boot time of RPI Zero W is approx. 50 seconds. This needs to be improved. 
 - ⚠️ Connecting the Raspberry PI directly to the ER-301 module or even to the same i2c bus is a source of problems. If the two devices are not started simultaneously, or if the ER-301 is powered on after the RPI, the Raspberry Pi will prevent the ER-301 from starting normally. To overcome this problem, it is prefereable to create an external circuit including two 4.7k pull-up resistors and use another set of GPIO on the Raspberry for i2c (aka. "Software i2c overlay") rather than the "hardware i2c gpio".
@@ -67,7 +67,7 @@ _____
 
 ____
 
-#### Important:
+### Important
 
 The Raspberry Pi acts as a "leader" on the i2c bus, it must be the only "leader" on this bus. This means that the Raspberry Pi and a Teletype can not co-exist on the same bus. Hopefully this might be possible soon.
 
