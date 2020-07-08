@@ -22,7 +22,9 @@ ____
 
 ❌ An issue prevents the ER-301 from booting up normally if both the Raspberry Pi and the ER-301 aren't started simultaneously.  
 
-Until an hardware solution is created, it is recommended to avoid connecting the ER-301 to the i2c bus. 
+Until an hardware solution is created (in progress, see log below), it is recommended to avoid connecting the ER-301 to the i2c bus.
+
+
 
 If you have no prior experience with the Raspberry GPIO or if you're not sure, it's prefearable to avoid trying anything until a simple hardware solution exists. 
 
@@ -57,6 +59,10 @@ ____
 ____
 
 ### Log
+
+##### 08/07/2020
+
+PCB sent to production.
 
 ##### 07/07/2020
 
