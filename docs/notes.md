@@ -60,6 +60,10 @@ ____
 
 ### Log
 
+##### 24/07/2020
+
+PCB received, prototype built. Testing in progress. 
+
 ##### 08/07/2020
 
 PCB sent to production.
