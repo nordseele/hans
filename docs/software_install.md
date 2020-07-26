@@ -96,7 +96,7 @@ sudo ln -s /usr/bin/npm /usr/local/bin/npm
 
 
 
-## Part 5. Install Hans (the node.js app)
+## Part 5. Install Hans (the node.js app) and enable i2c
 
 Check if node is correctly installed `node -v` `npm -v`  If it doesn't return any version number, try to reboot first. 
 
@@ -104,6 +104,16 @@ Now we can proceed to the installation of Hans, it's a simple and lightweight no
 
 ```shell
 cd && git clone https://github.com/nordseele/hans.git
+```
+
+`sudo nano /boot/config.txt` and modify these lines
+
+```
+dtparam=i2c_arm=on
+#dtparam=i2s=on
+#dtparam=spi=on
+dtparam=i2c1=on
+dtoverlay=i2c-gpio,bus=3,i2c_gpio_delay_us=2,i2c_gpio_sda=5,i2c_gpio_scl=6
 ```
 
 
