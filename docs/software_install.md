@@ -106,13 +106,9 @@ Now we can proceed to the installation of Hans, it's a simple and lightweight no
 cd && git clone https://github.com/nordseele/hans.git
 ```
 
-`sudo nano /boot/config.txt` and modify these lines
+`sudo nano /boot/config.txt` and add this line (enabling the software i2c bus)
 
 ```
-dtparam=i2c_arm=on
-#dtparam=i2s=on
-#dtparam=spi=on
-dtparam=i2c1=on
 dtoverlay=i2c-gpio,bus=3,i2c_gpio_delay_us=2,i2c_gpio_sda=5,i2c_gpio_scl=6
 ```
 
