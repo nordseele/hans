@@ -1,3 +1,4 @@
+
 # Software install - A "headless" RPI
 
 
@@ -25,14 +26,12 @@ and drop the file at the root of the sd card.
 
 Eject the card, put it in the Raspberry Pi and start it up.
 
-Use [lanscan](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjKtsb6-qzqAhWhunEKHaLhDE0QFjAAegQIGhAB&url=https%3A%2F%2Fapps.apple.com%2Ffr%2Fapp%2Flanscan%2Fid472226235%3Fmt%3D12&usg=AOvVaw32b0kELbBwROgBLd9MEySP) (or any other suitable tool) to find the IP address of the Pi
-
 Open a terminal window and connect to the Raspberry Pi via SSH. The password is "raspberry".
 
 ( ssh-keygen -R )
 
 ```shell
-ssh pi@192.XX.XX.XX
+ssh pi@raspberry.local
 ```
 
 Now we're going to update the RPI and install a few useful things
