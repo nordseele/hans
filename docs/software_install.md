@@ -37,13 +37,13 @@ ssh pi@raspberry.local
 Now we're going to update the RPI and install a few useful things
 
 ```shell
-sudo apt update
+sudo apt update -y
 
-sudo apt full-upgrade
+sudo apt full-upgrade -y
 
 sudo apt-get install git
 
-sudo rpi-update
+sudo rpi-update -y
 ```
 
 ```shell
