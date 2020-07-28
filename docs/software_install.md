@@ -41,9 +41,9 @@ sudo apt update -y
 
 sudo apt full-upgrade -y
 
-sudo apt-get install git
+sudo apt install git
 
-sudo rpi-update -y
+sudo SKIP_WARNING=1 rpi-update
 ```
 
 ```shell
@@ -52,7 +52,7 @@ sudo raspi-config
 
 Navigate within the menus and:
 
-*Network options* -> change the hostname if you wish (I name mine "hans") 
+*Network options* -> change the hostname if you wish
 
 *Interfacing options*  -> **enable i2c**
 
