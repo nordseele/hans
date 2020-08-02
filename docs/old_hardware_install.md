@@ -1,6 +1,5 @@
-# Hardware connections
+# Hardware connections (OBSOLETE, issues solved with a custom hardware solution)
 
-### 03/08/2020 OBSOLETE, issues solved with a custom hardware solution
 
 ## ⚠️ Important: 
 You should never "hot-wire" the i2c bus. Both the Raspberry PI and your Eurorack case should be turned <u>off</u> before plugging and manipulating the wires.  
