@@ -14,6 +14,11 @@ rm nodejs.tar.gz
 
 rm -Rf node-v12.18.0-linux-armv6l
 
+cd && git clone https://github.com/nordseele/hans.git
+
+sudo cp /home/pi/hans/hans.service /etc/systemd/system
+
+sudo systemctl enable hans
 
 sudo raspi-config nonint do_i2c 0
 sudo sh -c "echo 'dtoverlay=i2c-gpio,bus=3,i2c_gpio_delay_us=2,i2c_gpio_sda=5,i2c_gpio_scl=6' >> /boot/config.txt"
