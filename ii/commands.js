@@ -1,20 +1,20 @@
 // Supports only setters not getters
-
+// Temporary hack if there's only one argument, add a 'null' as second arg, ie: arg: [{name: 'port', type: 'u8'}, null])
 const modules = {
     er301: {
       address: [0x31, 0x32, 0x33],
       commands: {
         tr: {
           cmd: 0x0,
-          arg: [{name: 'port', type: 'u8'}]
+          arg: [{name: 'port', type: 'u8'}, null]
         },
         tr_tog: {
           cmd: 0x01,
-          arg: [{name: 'port', type: 'u8'}]
+          arg: [{name: 'port', type: 'u8'}, null]
         },
         tr_pulse: {
           cmd: 0x5,
-          arg: [{name: 'port', type: 'u8'}]
+          arg: [{name: 'port', type: 'u8'}, null]
         },
         tr_time: {
           cmd: 0x32,
@@ -52,11 +52,11 @@ const modules = {
         },
         trigger_toggle: {
           cmd: 2,
-          arg: [{name: 'channel', type: 'u8'}]
+          arg: [{name: 'channel', type: 'u8'}, null]
         },
         trigger_pulse: {
           cmd: 3,
-          arg: [{name: 'channel', type: 'u8'}]
+          arg: [{name: 'channel', type: 'u8'}, null]
         },
         trigger_time: {
           cmd: 4,
@@ -98,7 +98,7 @@ const modules = {
         },        
         call1: {
           cmd: 4,
-          arg: [{name: 'arg', type: 's16'}]
+          arg: [{name: 'arg', type: 's16'}, null]
         },        
         call2: {
           cmd: 5,
@@ -115,83 +115,20 @@ const modules = {
       }
     },
 
-    jf: {
-      address: [0x70,0x75],
-      commands: {
-        trigger: {
-          cmd: 1,
-          arg: [{name: 'channel', type: 's8'}, {name: 'state', type: 's8'}]
-        },
-        run_mode: {
-          cmd: 2,
-          arg: [{name: 'mode', type: 's8'}]
-        },
-        run: {
-          cmd: 3,
-          arg: [{name: 'volts', type: 's16V'}]
-        },
-        transpose: {
-          cmd: 4,
-          arg: [{name: 'pitch', type: 's16V'}]
-        },
-        vtrigger: {
-          cmd: 5,
-          arg: [{name: 'channel', type: 's8'}, {name: 'level', type: 's16V'}]
-        },
-        mode: {
-          cmd: 6,
-          arg: [{name: 'mode', type: 's8'}]
-        },
-        tick: {
-          cmd: 7,
-          arg: [{name: 'clock or bpm', type: 's8'}]
-        },
-        play_voice: {
-          cmd: 8,
-          arg: [{name: 'pitch or divs', type: 's16V'}, {name: 'level or repeats', type: 's16V'}]
-        },
-        play_note: {
-          cmd: 9,
-          arg: [{name: 'pitch or divs', type: 's16V'}, {name: 'level or repeats', type: 's16V'}]
-        },
-        god_mode: {
-          cmd: 10,
-          arg: [{name: 'state', type: 's8'}]
-        },
-        retune: {
-          cmd: 11,
-          arg: [{name: 'channel', type: 's8'}, {name: 'numerator', type: 's8'}, {name: 'denominator', type: 's8'}]
-        },
-        quantize: {
-          cmd: 12,
-          arg: [{name: 'divisions', type: 's8'}]
-        },
-        pitch: {
-          cmd: 13,
-          arg: [{name: 'channel', type: 's8'}, {name: 'pitch', type: 's16V'}]
-        },
-        address: {
-          cmd: 14,
-          arg: [{name: 'index', type: 's8'}]
-        },
-
-      }
-    },
-
     txo: {
       address: [0x60, 0x61, 0x62, 0x63, 0x64, 0x65, 0x66, 0x67],
       commands: {
         tr: {
           cmd: 0x0,
-          arg: [{name: 'port', type: 'u8'}]
+          arg: [{name: 'port', type: 'u8'}, null]
         },
         tr_tog: {
           cmd: 0x01,
-          arg: [{name: 'port', type: 'u8'}]
+          arg: [{name: 'port', type: 'u8'}, null]
         },
         tr_pulse: {
           cmd: 0x5,
-          arg: [{name: 'port', type: 'u8'}]
+          arg: [{name: 'port', type: 'u8'}, null]
         },
         tr_time: {
           cmd: 0x32,
@@ -461,27 +398,27 @@ const modules = {
         // Txo global commands
         kill: {
           cmd: 0x20,
-          arg: [{name: 'port', type: 'u8'}]
+          arg: [{name: 'port', type: 'u8'}, null]
         },        
         tr_init: {
           cmd: 0x22,
-          arg: [{name: 'port', type: 'u8'}]
+          arg: [{name: 'port', type: 'u8'}, null]
         },        
         cv_init: {
           cmd: 0x23,
-          arg: [{name: 'port', type: 'u8'}]
+          arg: [{name: 'port', type: 'u8'}, null]
         },        
         cv_callib: {
           cmd: 0x6E,
-          arg: [{name: 'port', type: 'u8'}]
+          arg: [{name: 'port', type: 'u8'}, null]
         },        
         cv_reset: {
           cmd: 0x6F,
-          arg: [{name: 'port', type: 'u8'}]
+          arg: [{name: 'port', type: 'u8'}, null]
         },        
         init: {
           cmd: 0x24,
-          arg: [{name: 'port', type: 'u8'}]
+          arg: [{name: 'port', type: 'u8'}, null]
         },        
 
       }
