@@ -50,7 +50,7 @@ chmod +x install.sh && ./install.sh
 
 Once the script has started, it will take approx. 30 minutes to update the pi, install things, etc... At the very end, you will be disconnected. Wait until the RPI reboots and the network "hans" shows up in the list of SSID. 
 
-At this point, The Raspberry Pi advertises an hotspot, you'll need to connect it to Internet. 
+At this point, The Raspberry Pi advertises an hotspot. 
 
 Connect to the hotspot "hans"
 
