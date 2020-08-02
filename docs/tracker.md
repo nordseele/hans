@@ -12,6 +12,7 @@
 - Custom functions ? 
 - Support for "getters" commands
 - Support for "multi-masters" bus
+- make use of the two I2c busses to convert and pass messages between the two
 
 
 #### Under consideration:
