@@ -6,12 +6,12 @@
 
 #### Development plans:
 
-[Tracker](/doc/tracker.md) 
+[Tracker](/docs/tracker.md) 
 
 
 #### Usage:
 
-[Usage](/doc/usage.md) 
+[Usage](/docs/usage.md) 
 
 ____
 
@@ -59,6 +59,10 @@ ____
 ____
 
 ### Log
+
+##### 03/08/2020
+
+Hardware successfully tested. 
 
 ##### 24/07/2020
 
