@@ -9,7 +9,7 @@ Use the Raspberry Pi Imager to instal Raspberry Pi OS <u>Lite</u> on your SD car
 
 https://www.raspberrypi.org/downloads/
 
-Mount the SD Card and enter the following command
+Mount the SD Card and 
 
 ```shell
 cd /volumes/boot && touch ssh
@@ -41,9 +41,6 @@ ssh pi@raspberrypi.local
 
 `ssh-keygen -R raspberrypi.local` if you encounter an "host/key verification" error. Note that it can take a few minutes until the pi connects to your wifi network. Check with Lanscan when it's connected and ready.
 
-
-
-Now we're going to update the RPI and install a few useful things
 
 ```shell
 sudo apt install git -y
