@@ -25,4 +25,8 @@ sudo systemctl disable systemd-resolved
 sudo rm /etc/wpa_supplicant/wpa_supplicant.conf
 sudo systemctl mask dnsmasq.service
 
+sudo sh -c "echo 'ap_name: hans' >> /etc/comitup.conf"
+sudo sh -c "echo 'ap_password: hhhhhhhh' >> /etc/comitup.conf"
+
+
 sudo reboot
