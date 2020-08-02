@@ -14,8 +14,15 @@ rm nodejs.tar.gz
 
 rm -Rf node-v12.18.0-linux-armv6l
 
+
+sudo raspi-config nonint do_i2c 0
+sudo sh -c "echo 'dtoverlay=i2c-gpio,bus=3,i2c_gpio_delay_us=2,i2c_gpio_sda=5,i2c_gpio_scl=6' >> /boot/config.txt"
+
+sudo raspi-config nonint do_expand_rootfs
+
 sudo apt-get install comitup -y
 sudo systemctl disable systemd-resolved
 sudo rm /etc/wpa_supplicant/wpa_supplicant.conf
 sudo systemctl mask dnsmasq.service
+
 sudo reboot
