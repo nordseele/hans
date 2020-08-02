@@ -1,8 +1,10 @@
-## Status: experimental / work in progress ⚠️
+## Status: experimental ⚠️
 
-OSC to I2c for Er-301, Txo etc.
+Although it is functional and used on a daily basis, this project/experiment is still a work in progress and is posted here more as a proof of concept than as a set of instructions to follow.  
+It requires the "Hans hat" created specifically and a RPI Zero W. 
 
-Unless you know what you're doing, this project requires the "Hans hat" and a RPI Zero W
+
+
 
 [Install](/docs/install.md) 
 
