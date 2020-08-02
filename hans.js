@@ -47,6 +47,7 @@ udpPort.on("ready", function () {
 });
 
 udpPort.on("message", function (oscMessage) {
+//console.log(oscMessage.address);
     let msg = oscMessage;
     let d = [];
     d = msg.address.split("/");
@@ -59,7 +60,7 @@ udpPort.on("message", function (oscMessage) {
     if((msg.args.length !== 0)){ // append additional args if present
         let a = [...e.args, ...msg.args];
         e.args = a;
-   } 
+    }
     prepareMessage(e);
 });
 
@@ -73,6 +74,7 @@ udpPort.open();
 
 const prepareMessage = (msg) => { 
     let m = msg;
+    console.log(m);
     let message = {}; 
 
     if (m.args.length != modules[m.device].commands[m.command].arg.length) {
@@ -81,6 +83,7 @@ const prepareMessage = (msg) => {
         let bytes = [];
         let args = modules[m.device].commands[m.command].arg;
         for (let i in args) {
+          if(args[i] !== null) { 
             let type = args[i].type;
             let size = type == 'u8' ? 1 : type == 's8' ? 1 : 2;
             let buf = Buffer.alloc(size);
@@ -98,6 +101,7 @@ const prepareMessage = (msg) => {
                     break;
             }
             bytes.push(buf);
+         }
         }
         message.payload = Buffer.concat(bytes); // concat all the buffers before we send them to the i2c node.
     }
