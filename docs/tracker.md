@@ -4,11 +4,12 @@
 #### In progress:
 
 - Custom hardware PCB (double i2c out, pull-up resistors and power from 5V rail) ✅
+- Switch between Hotspot and other network via captive portal or cli ✅
 - Internal (0 - 127) notes and CV conversion (similar to N and VV of Teletype)
-- Web interface (Settings, console, Ad-hoc network config, switch between network and ad-hoc via node app)
+- Web interface (Settings via node app) ?
 - Bluetooth LE Midi
 - More follower modules (Disting EX, W/2) ?
-- Custom functions
+- Custom functions ? 
 - Support for "getters" commands
 - Support for "multi-masters" bus
 
