@@ -7,7 +7,7 @@
 - Switch between Hotspot and other network via captive portal or cli ✅
 - Internal (0 - 127) notes and CV conversion (similar to N and VV of Teletype)
 - Web interface (Settings via node app) ?
-- Bluetooth LE Midi
+- Bluetooth LE Midi w/ custom mapping file
 - More follower modules (Disting EX, W/2) ?
 - Custom functions ? 
 - Support for "getters" commands
@@ -17,7 +17,4 @@
 
 #### Under consideration:
 
-- Serial OSC
-- Midi with custom mapping
-- 1u panel and PCB
-- bring Hans out of the Eurorack case (P2P net tbd)
+- 
