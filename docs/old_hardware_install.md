@@ -1,6 +1,6 @@
 # Hardware connections
 
-### OBSOLETE
+### 03/08/2020 OBSOLETE, issues solved with a custom hardware solution
 
 ## ⚠️ Important: 
 You should never "hot-wire" the i2c bus. Both the Raspberry PI and your Eurorack case should be turned <u>off</u> before plugging and manipulating the wires.  
@@ -12,7 +12,7 @@ _____
 ## Optimal solution: software i2c + external pull-up resistors circuit
 
 
-<img src="/doc/images/software_i2c_gpio.png" alt="i2c_GPIO" style="zoom:50%;" />
+<img src="/docs/images/software_i2c_gpio.png" alt="i2c_GPIO" style="zoom:50%;" />
 
 Software i2c overlay - this requires building an external circuit with two 4.7k pull-up resistors. We use another set of GPIO for SDA and SCL, this seems to prevent issues with the ER-301. (cf. list of issues). In this example we're using GPIO 23 and 24 for SDA and SCL.
 
@@ -47,7 +47,7 @@ The exact cause has not been determined but this module uses its TX and RX lines
 
 If you want to learn more about i2c, [read this](https://llllllll.co/t/a-users-guide-to-i2c/19219).
 
-<img src="/doc/images/i2c_gpio.png" alt="i2c_GPIO" style="zoom:50%;" />
+<img src="/docs/images/i2c_gpio.png" alt="i2c_GPIO" style="zoom:50%;" />
 
 The <u>SDA I2C is GPIO2 (which is pin 3)</u> and the <u>SCL I2C is GPIO3 (which is pin 5)</u>. Use <u>pin 9 for the GROUND</u> (GND).
 
@@ -56,7 +56,7 @@ We also need to edit `/hans/settings.js` and change the bus number to 1.
 This is the full GPIO pinout diagram of a Raspberry PI Zero or RPI 3. Be extremely careful. You may seriously damage the Raspberry Pi and your modules if you connect a wire to the wrong GPIO. If you decide to try, you do this at your own risk. 
 
 
-<img src="/doc/images/rpi_gpio_pinout.png" alt="rpiZ-08" style="zoom: 50%;" />
+<img src="/docs/images/rpi_gpio_pinout.png" alt="rpiZ-08" style="zoom: 50%;" />
 
 *Raspberry Pi GPIO pinout*
 
