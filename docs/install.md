@@ -1,10 +1,7 @@
 # Software install
 
 
-## Part 1. Install Raspberry OS, enable SSH, enable i2c, install Git etc.
-
-The installation begins like any fresh headless "Raspi" install: 
-
+## Part 1. Headless RPI setup
 Use the Raspberry Pi Imager to instal Raspberry Pi OS <u>Lite</u> on your SD card. 
 
 https://www.raspberrypi.org/downloads/
@@ -14,8 +11,6 @@ Mount the SD Card and
 ```shell
 cd /volumes/boot && touch ssh
 ```
-
-This will create an empty SSH file at the root of your SD and will enable SSH on the RPI.
 
 
 
@@ -41,6 +36,7 @@ ssh pi@raspberrypi.local
 
 `ssh-keygen -R raspberrypi.local` if you encounter an "host/key verification" error. Note that it can take a few minutes until the pi connects to your wifi network. Check with Lanscan when it's connected and ready.
 
+The whole install process is now scripted.
 
 ```shell
 sudo apt install git -y
@@ -58,16 +54,14 @@ Network name : "hans"
 
 Password : "hhhhhhhh" (you can change the password later in /etc/comitup.conf if you wish)
 
-Open http://hans.local then choose a network connected to internet and enter the details. 
+
+If you wish to connect the Pi to another network, open http://hans.local then choose a network connected to internet and enter the details. 
 
 
 
 ## Notes
 
-
-If you wish to connect the Pi to another network 
-
-If you wish to connect to the Pi directly (re-activate the hotspot) 
+If you wish to connect to re-activate the hotspot):
 
 ssh to the Pi and `comitup-cli` and type *d*
 
