@@ -17,4 +17,4 @@
 
 - Internal (0 - 127) notes and CV conversion (similar to N and VV of Teletype) ? / Can be done via Lemur or Max. 
 - Support for "getters" commands
-- Support for "multi-masters" bus
+- Support for "multi-masters" bus ? We'll use the second I2c bus to connect a second leader and pass messages to followers
