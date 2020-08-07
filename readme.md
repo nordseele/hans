@@ -43,7 +43,7 @@ Prototype PCB design ready to be sent for production. It features a double i2c I
 - [x] USB midi
 - [x] More "followers" modules (Disting EX, W/, Crow)
 - [ ] Use the two I2c busses to convert and pass messages between the two.
-
+- [x] OSC over UDP implementation (receiver), conversion to i2c, full set of ii commands.
 
 #### Under consideration:
 
