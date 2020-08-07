@@ -1,12 +1,15 @@
-## Status: experimental ⚠️
+### [Status](#status)
 
+Experimental ⚠️ / Work in progress.
+
+
+### [Description](#description)
 
 #### OSC and Ble Midi to I2c for Er-301, Txo etc
 
-Although it is functional and used on a daily basis, this project/experiment is still a work in progress and is published here as a "proof of concept" and not as a set of instructions to follow.
+This project is still a work in progress and is partially published here as a "proof of concept" and not as a set of instructions to follow.
 
-Unless you really know what you're doing, this project requires the "Hans hat" created specifically and a RPI Zero W, you should avoid trying to install anything if you're not sure. The code is still very rough. 
-
+This project requires the "Hans hat" created specifically and a RPI Zero W.
 
 ____
 
@@ -30,7 +33,7 @@ PCB sent to production.
 
 ##### 07/07/2020
 
-I have a prototype PCB design ready to be sent for production. I want to provide this as an option for safer connections between the Pi and the modules. It features a double i2c IO (regular hardware IO + software i2c on another set of GPIO) and a "safe" 5V input.
+Prototype PCB design ready to be sent for production. It features a double i2c IO (regular hardware IO + software i2c on another set of GPIO) and a "safe" 5V input.
 
 
 ____
