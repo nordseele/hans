@@ -42,11 +42,11 @@ Prototype PCB design ready to be sent for production. It features a double i2c I
 - [x] Bluetooth LE Midi w/ custom mapping file
 - [x] USB midi
 - [x] More "followers" modules (Disting EX, W/, Crow)
-- [ ] Use the two I2c busses to convert and pass messages between the two.
 - [x] OSC over UDP implementation (receiver), conversion to i2c, full set of ii commands.
 
 #### Under consideration:
 
+- [ ] Use both I2c busses to convert and pass messages between the two.
 - [ ] Support for "getters" commands
 - [ ] Support for "multi-masters" bus ? We'll use the second I2c bus to connect a second leader and pass messages to followers
 - [ ] Custom functions 
