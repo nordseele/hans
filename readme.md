@@ -40,22 +40,20 @@ Prototype PCB design ready to be sent for production. It features a double i2c I
 
 #### In progress:
 
-- Custom hardware PCB (double i2c bus, pull-up resistors and power from 5V rail w/ pwr protection) ✅
-- Switch between Hotspot and other network via captive portal or cli ✅
-- Lemur template
-- Web interface (Settings via node app)
-- Bluetooth LE Midi w/ custom mapping file ✅
-- USB midi ✅
-- More "followers" modules (Disting EX, W/2)
-
-- Use the two I2c busses to convert and pass messages between the two.
+- [x] Custom hardware PCB (double i2c bus, pull-up resistors and power from 5V rail w/ pwr protection)
+- [x] Switch between Hotspot and other network via captive portal or cli
+- [ ] Lemur template
+- [ ] Web interface (Settings via node app)
+- [x] Bluetooth LE Midi w/ custom mapping file
+- [x] USB midi
+- [x] More "followers" modules (Disting EX, W/, Crow)
+- [ ] Use the two I2c busses to convert and pass messages between the two.
 
 
 #### Under consideration:
 
-- ~Internal (0 - 127) notes and CV conversion (similar to N and VV of Teletype)
-- Support for "getters" commands
-- Support for "multi-masters" bus ? We'll use the second I2c bus to connect a second leader and pass messages to followers
-- Custom functions 
+- [ ] Support for "getters" commands
+- [ ] Support for "multi-masters" bus ? We'll use the second I2c bus to connect a second leader and pass messages to followers
+- [ ] Custom functions 
 
 
