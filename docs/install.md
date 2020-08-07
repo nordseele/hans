@@ -44,7 +44,7 @@ wget https://raw.githubusercontent.com/nordseele/hans/master/install.sh
 chmod +x install.sh && ./install.sh
 ```
 
-(Raspberry pi 3)
+(Raspberry pi 3, for dev only)
 
 ```shell
 sudo apt install git -y
