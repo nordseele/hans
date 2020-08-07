@@ -1,4 +1,4 @@
-### [Status](#status)
+## [Status](#status)
 
 Experimental ⚠️ / Work in progress.
 
@@ -6,7 +6,7 @@ This project is still a work in progress and is partially published here as a "p
 
 This project requires the "Hans hat" created specifically and a RPI Zero W.
 
-### [Log](#log)
+## [Log](#log)
 
 ##### 07/08/2020
 
