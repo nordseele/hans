@@ -1,8 +1,3 @@
-### [Status](#status)
-
-Experimental ⚠️ / Work in progress.
-
-
 ### [Description](#description)
 
 #### OSC and Ble Midi to I2c for Er-301, Txo etc
@@ -11,7 +6,10 @@ This project is still a work in progress and is partially published here as a "p
 
 This project requires the "Hans hat" created specifically and a RPI Zero W.
 
-____
+### [Status](#status)
+
+Experimental ⚠️ / Work in progress.
+
 
 ### [Log](#log)
 
@@ -36,7 +34,6 @@ PCB sent to production.
 Prototype PCB design ready to be sent for production. It features a double i2c IO (regular hardware IO + software i2c on another set of GPIO) and a "safe" 5V input.
 
 
-____
 
 ## [Tracker](#tracker)
 
@@ -46,11 +43,11 @@ ____
 - Custom hardware PCB (double i2c bus, pull-up resistors and power from 5V rail w/ pwr protection) ✅
 - Switch between Hotspot and other network via captive portal or cli ✅
 - Lemur template
-- Web interface (Settings via node app) ?
+- Web interface (Settings via node app)
 - Bluetooth LE Midi w/ custom mapping file ✅
-- More "followers" modules (Disting EX, W/2) ? 
+- More "followers" modules (Disting EX, W/2)
 
-- make use of the two I2c busses to convert and pass messages between the two
+- use the two I2c busses to convert and pass messages between the two.
 
 
 #### Under consideration:
