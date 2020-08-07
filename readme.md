@@ -45,14 +45,15 @@ Prototype PCB design ready to be sent for production. It features a double i2c I
 - Lemur template
 - Web interface (Settings via node app)
 - Bluetooth LE Midi w/ custom mapping file ✅
+- USB midi ✅
 - More "followers" modules (Disting EX, W/2)
 
-- use the two I2c busses to convert and pass messages between the two.
+- Use the two I2c busses to convert and pass messages between the two.
 
 
 #### Under consideration:
 
-- Internal (0 - 127) notes and CV conversion (similar to N and VV of Teletype) ? / Can be done via Lemur or Max. 
+- ~Internal (0 - 127) notes and CV conversion (similar to N and VV of Teletype)
 - Support for "getters" commands
 - Support for "multi-masters" bus ? We'll use the second I2c bus to connect a second leader and pass messages to followers
 - Custom functions 
