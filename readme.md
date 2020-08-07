@@ -1,15 +1,10 @@
-### [Description](#description)
-
-#### OSC and Ble Midi to I2c for Er-301, Txo etc
-
-This project is still a work in progress and is partially published here as a "proof of concept" and not as a set of instructions to follow.
-
-This project requires the "Hans hat" created specifically and a RPI Zero W.
-
 ### [Status](#status)
 
 Experimental ⚠️ / Work in progress.
 
+This project is still a work in progress and is partially published here as a "proof of concept" and not as a set of instructions to follow.
+
+This project requires the "Hans hat" created specifically and a RPI Zero W.
 
 ### [Log](#log)
 
