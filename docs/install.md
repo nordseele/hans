@@ -49,7 +49,7 @@ chmod +x install.sh && ./install.sh
 ```shell
 sudo apt install git -y
 wget https://raw.githubusercontent.com/nordseele/hans/master/install_arm7.sh
-chmod +x install.sh && ./install.sh
+chmod +x install_arm7.sh && ./install_arm7.sh
 ```
 
 
