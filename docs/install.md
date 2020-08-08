@@ -87,3 +87,5 @@ Start: `sudo systemctl start hans`
 Stop: `sudo systemctl stop hans`
 
 Or from the root `cd /hans && npm start` 
+
+journalctl -u hans
