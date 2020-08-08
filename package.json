@@ -5,6 +5,7 @@
   "main": "hans.js",
   "dependencies": {
     "i2c-bus": "^5.2.0",
+    "midi": "^1.0.0",
     "osc": "^2.4.1"
   },
   "devDependencies": {},
@@ -12,7 +13,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node hans.js",
     "stop": "pkill --signal SIGINT hans"
-    
   },
   "repository": {
     "type": "git",
