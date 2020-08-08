@@ -76,6 +76,10 @@ udpPort.open();
 
 // ----- MIDI
 
+Number.prototype.map = function (in_min, in_max, out_min, out_max) {
+    return (this - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+  }
+
 // Set up a new midi input.
 const input = new midi.Input();
 
@@ -122,7 +126,6 @@ input.on('message', (deltaTime, message) => {
 
 // Create a virtual midi input port.
 input.openVirtualPort("Hans midi");
-
 
 
 // ----- I2C

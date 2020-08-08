@@ -1,7 +1,7 @@
 const midimap = {
 
     cc: {
-        115: function() {return ['er301', 1, 'cv', 1, this.value]}
+        115: function() {return ['er301', 1, 'cv', 1, this.value.map(0, 127, 0, 16383)-774]}
     },
     note_on: {
         23 : function() {return ['er301', 1, 'tr_pulse', 1, 1]},
