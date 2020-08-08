@@ -128,7 +128,6 @@ input.on('message', (deltaTime, message) => {
 input.openVirtualPort("Hans midi");
 
 
-
 // ----- I2C
 
 // Prepare the i2c buffer
