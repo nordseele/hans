@@ -4,7 +4,7 @@ Experimental ⚠️ / Work in progress.
 
 This project is still a work in progress and is partially published here as a "proof of concept" and not as a set of instructions to follow.
 
-This project requires the "Hans hat" created specifically and a RPI Zero W.
+This project requires the "Hans hat" created specifically and a Raspberry Pi Zero W.
 
 ## [Log](#log)
 
@@ -35,20 +35,19 @@ Prototype PCB design ready to be sent for production. It features a double i2c I
 
 #### In progress:
 
-- [x] Custom hardware PCB (double i2c bus, pull-up resistors and power from 5V rail w/ pwr protection)
+- [x] OSC over UDP implementation (receiver), conversion to i2c, full set of ii commands.
 - [x] Switch between Hotspot and other network via captive portal or cli
+- [x] USB Midi & Bluetooth LE Midi with custom mapping file 
+- [x] Custom functions triggered by Midi (in Midimap.js) 
+- [x] Custom hardware PCB (double i2c bus, pull-up resistors and power (w/ pwr protection) from the 5V rail of a Eurorack case)
 - [ ] Lemur template
 - [ ] Web interface (Settings via node app)
-- [x] Bluetooth LE Midi w/ custom mapping file
-- [x] USB midi
-- [x] More "followers" modules (Disting EX, W/, Crow)
-- [x] OSC over UDP implementation (receiver), conversion to i2c, full set of ii commands.
 
 #### Under consideration:
 
+- [ ] Support for more "followers" modules (Disting EX, W/, Ansible and Crow), technically, already possible but needs some testing.
 - [ ] Use both I2c busses to convert and pass messages between the two.
 - [ ] Support for "getters" commands
 - [ ] Support for "multi-masters" bus ? We'll use the second I2c bus to connect a second leader and pass messages to followers
-- [ ] Custom functions 
 
 
