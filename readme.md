@@ -41,11 +41,12 @@ Prototype PCB design ready to be sent for production. It features a double i2c I
 - [x] Custom functions triggered by Midi (in Midimap.js) 
 - [x] Custom hardware PCB (double i2c bus, pull-up resistors and power (w/ pwr protection) from the 5V rail of a Eurorack case)
 - [ ] Lemur template
-- [ ] Web interface (Settings via node app)
+- [ ] ...
 
 #### Under consideration:
 
 - [ ] Support for more "followers" modules (Disting EX, W/, Ansible and Crow), technically, already possible but needs some testing.
+- [ ] Web interface (Settings)
 - [ ] Use both I2c busses to convert and pass messages between the two.
 - [ ] Support for "getters" commands
 - [ ] Support for "multi-masters" bus ? We'll use the second I2c bus to connect a second leader and pass messages to followers
