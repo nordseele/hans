@@ -41,7 +41,7 @@ Prototype PCB design ready to be sent for production. It features a double i2c I
 - [x] Custom functions triggered by Midi (in Midimap.js) 
 - [x] Custom hardware PCB (double i2c bus, pull-up resistors and power (w/ pwr protection) from the 5V rail of a Eurorack case)
 - [ ] Lemur template
-- [ ] Leapmotion 
+- [ ] Leapmotion support and mapping
 
 #### Under consideration:
 
