@@ -4,17 +4,23 @@ Hans / v0.0.2
 OSC and midi to i2c app - ER-301, TXo, etc
 Nordseele 2020 
 Usage : /module/number/command/args
-Status: Experimental, proof of concept
+Status: Experimental
 ===================================
 */
 
 const osc = require('osc');
 const midi = require('midi');
 const i2c = require('i2c-bus');
-const clamp = (num, a, b) => Math.max(Math.min(num, Math.max(a, b)), Math.min(a, b));
 const modules = require('./assets/commands');
 const midimap = require('./assets/midimap');
 const settings = require('./settings');
+
+// ----- Helpers // todo -> Map N CC and CV, TT style
+
+const clamp = (num, a, b) => Math.max(Math.min(num, Math.max(a, b)), Math.min(a, b));
+Number.prototype.mapped = function (in_min, in_max, out_min, out_max) {
+    return (this - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+  }
 
 
 // ----- OSC
@@ -42,7 +48,7 @@ const udpPort = new osc.UDPPort({
 
 udpPort.on("ready", function () {
     let ipAddresses = getIPAddresses();
-    console.log("H A N S");
+    console.log("HANS");
     console.log("Listening for OSC over UDP.");
     ipAddresses.forEach(function (address) {
         console.log("Host:", address + ", Port:", udpPort.options.localPort);
@@ -56,15 +62,16 @@ udpPort.on("message", function (oscMessage) {
     d = msg.address.split("/");
     let e = {
         "device" : d[1],
-        "unit_number"   : parseInt(d[2]) - 1,
+        "unit_number"   : parseInt(d[2]),
         "command"   : d[3],
         "args" : [parseInt(d[4]) - 1]
     }
-    if((msg.args.length !== 0)){ // append additional args if present
+    if((msg.args.length !== 0)){ // append additional args when present
         let a = [...e.args, ...msg.args];
         e.args = a;
     }
-    prepareMessage(e);
+    formati2cMessage(e);
+    console.log(e);
 });
 
 udpPort.on("error", function (err) {
@@ -76,16 +83,10 @@ udpPort.open();
 
 // ----- MIDI
 
-Number.prototype.map = function (in_min, in_max, out_min, out_max) {
-    return (this - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
-  }
-
-// Set up a new midi input.
 const input = new midi.Input();
 
-// Configure a callback.
+// Callback.
 input.on('message', (deltaTime, message) => {
-    //console.log(`m: ${message} d: ${deltaTime}`);
     let m_command = Math.floor(message[0]/16);
     let m_channel = Math.floor(message[0] - (m_command*16)) + 1;
     let m_value = message[2];
@@ -94,45 +95,41 @@ input.on('message', (deltaTime, message) => {
     switch(m_command) {
         case 8: // note off
         if (midimap.note_off[m_number] !== undefined) {
-            midimap.note_off.number = m_number;
-            midimap.note_off.velocity = m_value;
-            for(let e of midimap.note_off[m_number]()) {
-                console.log(e);
+            for(let m of midimap.note_off[m_number](m_number, m_value)) {
+                console.log(m);
+                //formati2cMessage(m);
             }
         };
         break;
 
         case 9: // note on
-            console.log("note number", m_number);
             if (midimap.note_on[m_number] !== undefined) {
-                midimap.note_on.number = m_number;
-                midimap.note_on.velocity = m_value;
-                console.log(midimap.note_on[m_number]());
+                for(let m of midimap.note_on[m_number](m_number, m_value)) {
+                    console.log(m);
+                    //formati2cMessage(m);
+                }
             };
         break;
 
         case 11: // cc
             console.log(m_value, m_number);
-            if (midimap.cc[m_number] !== undefined) {
-                // if there is a corresponding function in midimap.js, send the i2c command
-                midimap.cc.value = m_value;
-                console.log(midimap.cc[m_number]());
-               // prepareMessage(midimap.cc[message[1]]);
+            if (midimap.cc[m_number] !== undefined) { // if there is a corresponding function in midimap.js, send the i2c command
+                for(let m of midimap.cc[m_number](m_value)) {
+                    console.log(m);
+                    //formati2cMessage(m);
+                }
             };
         break;
     };
 });
 
 
-// Create a virtual midi input port.
 input.openVirtualPort("Hans midi");
 
 
 // ----- I2C
 
-// Prepare the i2c buffer
-
-const prepareMessage = (msg) => { 
+const formati2cMessage = (msg) => { 
     let m = msg;
     console.log(m);
     let message = {}; 
@@ -166,14 +163,12 @@ const prepareMessage = (msg) => {
         message.payload = Buffer.concat(bytes); // concat all the buffers before we send them to the i2c node.
     }
 
-message.address = modules[m.device].address[m.unit_number];
+message.address = modules[m.device].address[m.unit_number - 1];
 message.command = modules[m.device].commands[m.command].cmd;
-sendMessage(message);
+sendi2cMessage(message);
 }
 
-// Send i2c message
-
-const sendMessage = (message) => {
+const sendi2cMessage = (message) => {
     const i2c1 = i2c.openSync(settings.busno);
     i2c1.writeI2cBlockSync(message.address, message.command, message.payload.length, message.payload); 
     i2c1.closeSync(); 
