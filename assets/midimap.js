@@ -5,12 +5,21 @@
 const midimap = {
 
     cc: {
-        115: value => ([
+        
+        112: value => ([
             { device: 'er301', unit_number: '1', command: 'cv', args: [0, value.mapped(0, 127, 0, 16383) - 774] }
         ]),
-
-        112: value => ([
-            { device: 'er301', unit_number: '1', command: 'cv_slew', args: [0, value.mapped(0, 127, 0, 16383) - 774] }
+        
+        113: value => ([
+            { device: 'er301', unit_number: '1', command: 'cv', args: [1, value.mapped(0, 127, 0, 16383) - 774] }
+        ]),
+        
+        114: value => ([
+            { device: 'er301', unit_number: '1', command: 'cv', args: [2, value.mapped(0, 127, 0, 16383) - 774] }
+        ]),
+        
+        115: value => ([
+            { device: 'er301', unit_number: '1', command: 'cv', args: [3, value.mapped(0, 127, 0, 16383) - 774] }
         ]),
 
         105: value => ([

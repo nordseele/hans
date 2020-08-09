@@ -96,8 +96,8 @@ input.on('message', (deltaTime, message) => {
         case 8: // note off
         if (midimap.note_off[m_number] !== undefined) {
             for(let m of midimap.note_off[m_number](m_number, m_value)) {
-                console.log(m);
-                //formati2cMessage(m);
+                //console.log(m);
+                formati2cMessage(m);
             }
         };
         break;
@@ -105,8 +105,8 @@ input.on('message', (deltaTime, message) => {
         case 9: // note on
             if (midimap.note_on[m_number] !== undefined) {
                 for(let m of midimap.note_on[m_number](m_number, m_value)) {
-                    console.log(m);
-                    //formati2cMessage(m);
+                    //console.log(m);
+                    formati2cMessage(m);
                 }
             };
         break;
@@ -115,8 +115,8 @@ input.on('message', (deltaTime, message) => {
             console.log(m_value, m_number);
             if (midimap.cc[m_number] !== undefined) { // if there is a corresponding function in midimap.js, send the i2c command
                 for(let m of midimap.cc[m_number](m_value)) {
-                    console.log(m);
-                    //formati2cMessage(m);
+                    //console.log(m);
+                    formati2cMessage(m);
                 }
             };
         break;
@@ -126,6 +126,7 @@ input.on('message', (deltaTime, message) => {
 
 input.openVirtualPort("Hans midi");
 
+// pass h
 
 // ----- I2C
 
