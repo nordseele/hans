@@ -1,5 +1,5 @@
-// For Txo and er301: Port numbers start from 0
-// CC value accessible via this.value | Note number -> this.number and velocity -> this.velocity
+// For Txo and er301: Port numbers starts from 0
+// CC 
 // Follow the structure of the object, you must return an array, even if a cc only returns one command.
 
 const midimap = {
