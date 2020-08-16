@@ -10,7 +10,7 @@ This project requires the "Hans hat" created specifically and a Raspberry Pi Zer
 
 ##### 16/08/2020
 
-REV B PCB sent to production. This new PCB features a MIDI IN/OUT/THRU header.
+REV B PCB sent to production. This new PCB features a serial MIDI IN/OUT/THRU header.
 
 ##### 07/08/2020
 
