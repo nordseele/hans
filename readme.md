@@ -8,6 +8,10 @@ This project requires the "Hans hat" created specifically and a Raspberry Pi Zer
 
 ## [Log](#log)
 
+##### 16/08/2020
+
+REV B PCB sent to production. This new PCB features a MIDI IN/OUT/THRU header.
+
 ##### 07/08/2020
 
 Midi implementation. User defined Midi mapping + support for both Bluetooth midi and hardware midi connected via USB.
