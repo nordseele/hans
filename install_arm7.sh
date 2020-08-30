@@ -1,6 +1,6 @@
 sudo apt update -y
 
-sudo apt full-upgrade -y
+# sudo apt full-upgrade -y
 
 sudo SKIP_WARNING=1 rpi-update
 
