@@ -12,7 +12,7 @@ This project requires the "Hans" add-on board for Raspberry Pi Zero W.
 
 ##### 20/09/2020
 
-REV C PCB sent to production.
+REV C PCB almost ready for production.
 
 ##### 16/08/2020
 
