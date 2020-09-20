@@ -1,5 +1,5 @@
 ![Hans_revB](/docs/images/hans.png)
-###### Hans add-on board Rev B mounted on a Raspberry Pi Zero W
+###### *Hans add-on board Rev B & Raspberry Pi Zero W*
 
 ## [Status](#status)
 
