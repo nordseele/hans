@@ -4,7 +4,7 @@
 
 This project is still a work in progress and is partially published here as a "proof of concept" and not as a set of instructions to follow.
 
-This project requires the "Hans hat" created specifically and a Raspberry Pi Zero W.
+This project requires the "Hans" add-on board for Raspberry Pi Zero W.
 
 ## [Log](#log)
 
