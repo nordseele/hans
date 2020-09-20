@@ -1,4 +1,4 @@
-![Hans_revB](../docs/images/hans/png)
+![Hans_revB](../docs/images/hans.png)
 
 ## [Status](#status)
 
