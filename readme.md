@@ -48,10 +48,11 @@ Prototype PCB design ready to be sent for production. It features a double i2c I
 
 - [x] OSC over UDP implementation (receiver), conversion to i2c, full set of ii commands.
 - [x] Switch between Hotspot and other network via captive portal or cli
-- [x] Bluetooth LE Midi with custom mapping file 
+- [x] Bluetooth LE MIDI with custom mapping file 
 - [x] Custom functions triggered by Midi (in Midimap.js) 
 - [x] Custom hardware PCB (double i2c bus, pull-up resistors and power (w/ pwr protection) from the 5V rail of a Eurorack case)
-- [ ] Serial midi IO on the hat
+- [X] Serial midi IO on the hat
+- [X] MIDI over USB
 - [ ] i2C follower on separate bus
 #### Under consideration:
 
