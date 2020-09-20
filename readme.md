@@ -1,12 +1,16 @@
 ## [Status](#status)
 
-Experimental ⚠️ / Work in progress.
+🚧 Work in progress.
 
 This project is still a work in progress and is partially published here as a "proof of concept" and not as a set of instructions to follow.
 
 This project requires the "Hans hat" created specifically and a Raspberry Pi Zero W.
 
 ## [Log](#log)
+
+##### 20/09/2020
+
+REV C PCB sent to production.
 
 ##### 16/08/2020
 
