@@ -5,6 +5,7 @@ OSC and midi to i2c app - ER-301, TXo, etc
 Nordseele 2020 
 Usage : /module/number/command/args
 Status: Experimental
+TODO :  complete refactoring
 ===================================
 */
 
@@ -80,6 +81,7 @@ udpPort.open();
 // ----- MIDI
 
 const input = new midi.Input();
+const output = new midi.Output();
 
 // TODO -> Rewrite the whole function and callback system
 input.on('message', (deltaTime, message) => {
@@ -120,7 +122,8 @@ input.on('message', (deltaTime, message) => {
 });
 
 
-input.openVirtualPort("Hans midi");
+input.openVirtualPort("Hans_MIDI_IN");
+output.openVirtualPort("Hans_MIDI_OUT");
 
 // ----- I2C
 
