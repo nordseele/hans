@@ -39,8 +39,6 @@ PCB sent to production.
 
 Prototype PCB design ready to be sent for production. It features a double i2c IO (regular hardware IO + software i2c on another set of GPIO) and a "safe" 5V input.
 
-
-
 ## [Tracker](#tracker)
 
 
