@@ -15,14 +15,10 @@ const modules = require('./assets/commands');
 const midimap = require('./assets/midimap');
 const settings = require('./settings');
 
-// ----- Helpers // todo -> Map N CC and CV, TT style
-
 const clamp = (num, a, b) => Math.max(Math.min(num, Math.max(a, b)), Math.min(a, b));
 Number.prototype.mapped = function (in_min, in_max, out_min, out_max) {
     return (this - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
   }
-
-
 // ----- OSC
 
 const getIPAddresses = function () {
@@ -52,7 +48,7 @@ udpPort.on("ready", function () {
     console.log("Listening for OSC over UDP.");
     ipAddresses.forEach(function (address) {
         console.log("Host:", address + ", Port:", udpPort.options.localPort);
-    });
+    }); // map  ??
     console.log("i2c bus number:", settings.busno);
 });
 
@@ -85,7 +81,7 @@ udpPort.open();
 
 const input = new midi.Input();
 
-// Callback.
+// TODO -> Rewrite the whole function and callback system
 input.on('message', (deltaTime, message) => {
     let m_command = Math.floor(message[0]/16);
     let m_channel = Math.floor(message[0] - (m_command*16)) + 1;
@@ -126,8 +122,6 @@ input.on('message', (deltaTime, message) => {
 
 input.openVirtualPort("Hans midi");
 
-// pass h
-
 // ----- I2C
 
 const formati2cMessage = (msg) => { 
@@ -140,7 +134,7 @@ const formati2cMessage = (msg) => {
     } else {
         let bytes = [];
         let args = modules[m.device].commands[m.command].arg;
-        for (let i in args) {
+        for (let i in args) { // map ??
           if(args[i] !== null) { 
             let type = args[i].type;
             let size = type == 'u8' ? 1 : type == 's8' ? 1 : 2;
@@ -161,7 +155,7 @@ const formati2cMessage = (msg) => {
             bytes.push(buf);
          }
         }
-        message.payload = Buffer.concat(bytes); // concat all the buffers before we send them to the i2c node.
+        message.payload = Buffer.concat(bytes);
     }
 
 message.address = modules[m.device].address[m.unit_number - 1];
