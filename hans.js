@@ -14,7 +14,7 @@ const i2c = require('i2c-bus');
 const modules = require('./assets/commands');
 const midimap = require('./assets/midimap');
 const settings = require('./settings');
-const debug_midi = true;
+const DEBUG_MIDI = true;
 
 const clamp = (num, a, b) => Math.max(Math.min(num, Math.max(a, b)), Math.min(a, b));
 Number.prototype.mapped = function (in_min, in_max, out_min, out_max) {
@@ -67,7 +67,7 @@ udpPort.on("message", (oscMessage) => {
             let a = [...e.args, ...msg.args];
             e.args = a;
         }
-        if (debug_midi == false) {
+        if (DEBUG_MIDI == false) {
             formati2cMessage(e);
         }
         console.log(e);
@@ -90,13 +90,17 @@ input.on('message', (deltaTime, message) => {
     let m_channel = Math.floor(message[0] - (m_command*16)) + 1;
     let m_value = message[2];
     let m_number = message[1];
+    let midi_b = message;
+    if (DEBUG_MIDI == true) {
+        console.log("Serial MIDI: " + midi_b); 
+    }
     output.sendMessage(message);   
     switch(m_command) {
         case 8: // note off
         if (midimap.note_off[m_number] !== undefined) {
             for(let m of midimap.note_off[m_number](m_number, m_value)) {
-                //console.log(m);
-                if debug_midi == false {
+                console.log(m);
+                if (DEBUG_MIDI == false) {
                     formati2cMessage(m);
                 }
             }
@@ -106,8 +110,8 @@ input.on('message', (deltaTime, message) => {
         case 9: // note on
             if (midimap.note_on[m_number] !== undefined) {
                 for(let m of midimap.note_on[m_number](m_number, m_value)) {
-                    //console.log(m);
-                    if debug_midi == false {
+                    console.log("External MIDI" + m);
+                    if (DEBUG_MIDI == false) {
                         formati2cMessage(m);
                     }
                 }
@@ -118,8 +122,8 @@ input.on('message', (deltaTime, message) => {
             console.log(m_value, m_number);
             if (midimap.cc[m_number] !== undefined) { // if there is a corresponding function in midimap.js, send the i2c command
                 for(let m of midimap.cc[m_number](m_value)) {
-                    //console.log(m);
-                    if debug_midi == false {
+                    console.log(m);
+                    if (DEBUG_MIDI == false) {
                         formati2cMessage(m);
                     }
                 }
@@ -178,3 +182,44 @@ const sendi2cMessage = (message) => {
     i2c1.writeI2cBlockSync(message.address, message.command, message.payload.length, message.payload); 
     i2c1.closeSync(); 
 }
+
+// Hans ii follower test
+
+const pi = require('pigpio-client').pigpio('localhost'); // localhost:8888
+// const s = require('debug')('i2c_slave');
+// const m = require('debug')('i2c_master');
+const follower_addr = 0x33;
+
+const ready = new Promise( (resolve, reject) => {
+pi.once('connected', resolve);
+pi.once('error', reject);
+});
+
+ready.then(async (info) => {
+console.dir(info);
+/* BSC slave */
+// configure
+let rv = await pi.bscI2C(follower_addr);
+console.log(rv);
+let rv_s = rv.slice(1, 5);
+console.log(rv_s);
+
+pi.on('EVENT_BSC', async() => {
+let [count, ...data] = await pi.bscI2C(follower_addr);
+let bsc_stat = data.slice(0, 4);
+data = data.slice(4);
+if (count>5) {
+console.log(bsc_stat);
+console.log(data);}
+// write data to the BSC Tx FIFO
+if (data.length) {
+[count, ...bsc_stat] = await pi.bscI2C(follower_addr, data);
+console.log("Teletype says: " + data);
+//console.log(bsc_stat);
+
+// test send midi for each ii message received (temporary)
+output.sendMessage([144, 22, 1]);
+}
+});
+
+}).catch(console.error);

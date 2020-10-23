@@ -6,7 +6,8 @@
   "dependencies": {
     "i2c-bus": "^5.2.0",
     "midi": "^1.0.0",
-    "osc": "^2.4.1"
+    "osc": "^2.4.1",
+    "pigpio-client": "^1.5.1"
   },
   "devDependencies": {},
   "scripts": {
