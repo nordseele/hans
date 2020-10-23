@@ -1,11 +1,10 @@
 /*
 ===================================
-Hans / v0.0.2
+Hans / v0.0.3
 OSC and midi to i2c app - ER-301, TXo, etc
 Nordseele 2020 
 Usage : /module/number/command/args
 Status: Experimental
-TODO :  complete refactoring
 ===================================
 */
 
@@ -15,6 +14,7 @@ const i2c = require('i2c-bus');
 const modules = require('./assets/commands');
 const midimap = require('./assets/midimap');
 const settings = require('./settings');
+const debug_midi = true;
 
 const clamp = (num, a, b) => Math.max(Math.min(num, Math.max(a, b)), Math.min(a, b));
 Number.prototype.mapped = function (in_min, in_max, out_min, out_max) {
@@ -22,19 +22,19 @@ Number.prototype.mapped = function (in_min, in_max, out_min, out_max) {
   }
 // ----- OSC
 
-const getIPAddresses = function () {
+const getIPAddresses = () => {
     const os = require("os"),
         interfaces = os.networkInterfaces(),
         ipAddresses = [];
-        for (deviceName in interfaces) {
-            let addresses = interfaces[deviceName];
-            for (let i = 0; i < addresses.length; i++) {
-                let addressInfo = addresses[i];
-                if (addressInfo.family === "IPv4" && !addressInfo.internal) {
-                    ipAddresses.push(addressInfo.address);
-                }
+    for (deviceName in interfaces) {
+        let addresses = interfaces[deviceName];
+        for (let i = 0; i < addresses.length; i++) {
+            let addressInfo = addresses[i];
+            if (addressInfo.family === "IPv4" && !addressInfo.internal) {
+                ipAddresses.push(addressInfo.address);
             }
         }
+    }
     return ipAddresses;
 };
 
@@ -43,37 +43,39 @@ const udpPort = new osc.UDPPort({
     localPort: settings.listening_port 
 });
 
-udpPort.on("ready", function () {
-    let ipAddresses = getIPAddresses();
-    console.log("HANS");
-    console.log("Listening for OSC over UDP.");
-    ipAddresses.forEach(function (address) {
-        console.log("Host:", address + ", Port:", udpPort.options.localPort);
-    }); // map  ??
-    console.log("i2c bus number:", settings.busno);
-});
+udpPort.on("ready", () => {
+        let ipAddresses = getIPAddresses();
+        console.log("HANS");
+        console.log("Listening for OSC over UDP.");
+        ipAddresses.forEach(function (address) {
+            console.log("Host:", address + ", Port:", udpPort.options.localPort);
+        }); // map  ??
+        console.log("i2c bus number:", settings.busno);
+    });
 
-udpPort.on("message", function (oscMessage) {
-    let msg = oscMessage;
-    let d = [];
-    d = msg.address.split("/");
-    let e = {
-        "device" : d[1],
-        "unit_number"   : parseInt(d[2]),
-        "command"   : d[3],
-        "args" : [parseInt(d[4]) - 1]
-    }
-    if((msg.args.length !== 0)){ // append additional args when present
-        let a = [...e.args, ...msg.args];
-        e.args = a;
-    }
-    formati2cMessage(e);
-    console.log(e);
-});
+udpPort.on("message", (oscMessage) => {
+        let msg = oscMessage;
+        let d = [];
+        d = msg.address.split("/");
+        let e = {
+            "device": d[1],
+            "unit_number": parseInt(d[2]),
+            "command": d[3],
+            "args": [parseInt(d[4]) - 1]
+        };
+        if ((msg.args.length !== 0)) { // append additional args when present
+            let a = [...e.args, ...msg.args];
+            e.args = a;
+        }
+        if (debug_midi == false) {
+            formati2cMessage(e);
+        }
+        console.log(e);
+    });
 
-udpPort.on("error", function (err) {
-    console.log(err);
-});
+udpPort.on("error", (err) => {
+        console.log(err);
+    });
 
 udpPort.open();
 
@@ -83,19 +85,20 @@ udpPort.open();
 const input = new midi.Input();
 const output = new midi.Output();
 
-// TODO -> Rewrite the whole function and callback system
 input.on('message', (deltaTime, message) => {
     let m_command = Math.floor(message[0]/16);
     let m_channel = Math.floor(message[0] - (m_command*16)) + 1;
     let m_value = message[2];
     let m_number = message[1];
-
+    output.sendMessage(message);   
     switch(m_command) {
         case 8: // note off
         if (midimap.note_off[m_number] !== undefined) {
             for(let m of midimap.note_off[m_number](m_number, m_value)) {
                 //console.log(m);
-                formati2cMessage(m);
+                if debug_midi == false {
+                    formati2cMessage(m);
+                }
             }
         };
         break;
@@ -104,7 +107,9 @@ input.on('message', (deltaTime, message) => {
             if (midimap.note_on[m_number] !== undefined) {
                 for(let m of midimap.note_on[m_number](m_number, m_value)) {
                     //console.log(m);
-                    formati2cMessage(m);
+                    if debug_midi == false {
+                        formati2cMessage(m);
+                    }
                 }
             };
         break;
@@ -114,7 +119,9 @@ input.on('message', (deltaTime, message) => {
             if (midimap.cc[m_number] !== undefined) { // if there is a corresponding function in midimap.js, send the i2c command
                 for(let m of midimap.cc[m_number](m_value)) {
                     //console.log(m);
-                    formati2cMessage(m);
+                    if debug_midi == false {
+                        formati2cMessage(m);
+                    }
                 }
             };
         break;
@@ -133,7 +140,7 @@ const formati2cMessage = (msg) => {
     let message = {}; 
 
     if (m.args.length != modules[m.device].commands[m.command].arg.length) {
-        console.log("Number of arguments doesn't match");
+        console.log("Incorrect number of arguments");
     } else {
         let bytes = [];
         let args = modules[m.device].commands[m.command].arg;

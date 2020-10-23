@@ -18,8 +18,11 @@ sudo systemctl enable hans
 
 sudo apt-get install libdbus-1-dev libglib2.0-dev libudev-dev libical-dev libreadline-dev libasound2-dev -y
 wget https://github.com/antiprism/amidiauto/releases/download/v1.01Raspbian/amidiauto-1.01_buster.deb
-sudo apt install ./amidiauto-1.01_buster.deb 
+sudo apt install ./amidiauto-1.01_buster.deb
+sudo cp amidiauto.conf /etc/amidiauto.conf
 sudo systemctl enable amidiauto
+sudo cp mod-ttymidi.service /etc/systemd/system/mod-ttymidi.service
+sudo systemctl enable mod-ttymidi.service
 
 sudo raspi-config nonint do_i2c 0
 sudo sh -c "echo 'dtoverlay=i2c-gpio,bus=3,i2c_gpio_delay_us=2,i2c_gpio_sda=5,i2c_gpio_scl=6' >> /boot/config.txt"
