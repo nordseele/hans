@@ -178,3 +178,42 @@ const sendi2cMessage = (message) => {
     i2c1.writeI2cBlockSync(message.address, message.command, message.payload.length, message.payload); 
     i2c1.closeSync(); 
 }
+
+// Hans i2c follower test
+
+const pi = require('pigpio-client').pigpio('localhost'); // localhost:8888
+// const s = require('debug')('i2c_slave');
+// const m = require('debug')('i2c_master');
+const follower_addr = 0x33;
+
+const ready = new Promise( (resolve, reject) => {
+pi.once('connected', resolve);
+pi.once('error', reject);
+});
+
+ready.then(async (info) => {
+console.dir(info);
+/* BSC slave */
+// configure
+let rv = await pi.bscI2C(follower_addr);
+console.log(rv);
+let rv_s = rv.slice(1, 5);
+console.log(rv_s);
+
+pi.on('EVENT_BSC', async() => {
+let [count, ...data] = await pi.bscI2C(follower_addr);
+let bsc_stat = data.slice(0, 4);
+data = data.slice(4);
+if (count>5) {
+console.log(bsc_stat);
+console.log(data);}
+// write data to the BSC Tx FIFO
+if (data.length) {
+[count, ...bsc_stat] = await pi.bscI2C(follower_addr, data);
+console.log(bsc_stat);
+// test send midi
+output.sendMessage([144, 22, 1]);
+}
+});
+
+}).catch(console.error);
