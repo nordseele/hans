@@ -14,7 +14,7 @@ const i2c = require('i2c-bus');
 const modules = require('./assets/commands');
 const midimap = require('./assets/midimap');
 const settings = require('./settings');
-const debug_midi = true;
+const DEBUG_MIDI = true;
 
 const clamp = (num, a, b) => Math.max(Math.min(num, Math.max(a, b)), Math.min(a, b));
 Number.prototype.mapped = function (in_min, in_max, out_min, out_max) {
@@ -67,7 +67,7 @@ udpPort.on("message", (oscMessage) => {
             let a = [...e.args, ...msg.args];
             e.args = a;
         }
-        if (debug_midi == false) {
+        if (DEBUG_MIDI == false) {
             formati2cMessage(e);
         }
         console.log(e);
@@ -96,7 +96,7 @@ input.on('message', (deltaTime, message) => {
         if (midimap.note_off[m_number] !== undefined) {
             for(let m of midimap.note_off[m_number](m_number, m_value)) {
                 //console.log(m);
-                if debug_midi == false {
+                if (DEBUG_MIDI == false) {
                     formati2cMessage(m);
                 }
             }
@@ -107,7 +107,7 @@ input.on('message', (deltaTime, message) => {
             if (midimap.note_on[m_number] !== undefined) {
                 for(let m of midimap.note_on[m_number](m_number, m_value)) {
                     //console.log(m);
-                    if debug_midi == false {
+                    if (DEBUG_MIDI == false) {
                         formati2cMessage(m);
                     }
                 }
@@ -119,7 +119,7 @@ input.on('message', (deltaTime, message) => {
             if (midimap.cc[m_number] !== undefined) { // if there is a corresponding function in midimap.js, send the i2c command
                 for(let m of midimap.cc[m_number](m_value)) {
                     //console.log(m);
-                    if debug_midi == false {
+                    if (DEBUG_MIDI == false) {
                         formati2cMessage(m);
                     }
                 }
