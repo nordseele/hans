@@ -42,5 +42,5 @@ sudo sh -c "echo 'ap_name: hans' >> /etc/comitup.conf"
 sudo sh -c "echo 'ap_password: hhhhhhhh' >> /etc/comitup.conf"
 
 sudo raspi-config nonint do_hostname hans
-
+sudo cp config.txt /boot/config.txt
 sudo reboot
