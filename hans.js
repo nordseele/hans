@@ -90,12 +90,20 @@ input.on('message', (deltaTime, message) => {
     let m_channel = Math.floor(message[0] - (m_command*16)) + 1;
     let m_value = message[2];
     let m_number = message[1];
+    let midi_b = message;
+    if (DEBUG_MIDI == true) {
+        console.log("Serial MIDI: " + midi_b); 
+    }
     output.sendMessage(message);   
     switch(m_command) {
         case 8: // note off
         if (midimap.note_off[m_number] !== undefined) {
             for(let m of midimap.note_off[m_number](m_number, m_value)) {
+<<<<<<< HEAD
                 //console.log(m);
+=======
+                console.log(m);
+>>>>>>> i2cfollower
                 if (DEBUG_MIDI == false) {
                     formati2cMessage(m);
                 }
@@ -106,7 +114,11 @@ input.on('message', (deltaTime, message) => {
         case 9: // note on
             if (midimap.note_on[m_number] !== undefined) {
                 for(let m of midimap.note_on[m_number](m_number, m_value)) {
+<<<<<<< HEAD
                     //console.log(m);
+=======
+                    console.log("External MIDI" + m);
+>>>>>>> i2cfollower
                     if (DEBUG_MIDI == false) {
                         formati2cMessage(m);
                     }
@@ -118,7 +130,11 @@ input.on('message', (deltaTime, message) => {
             console.log(m_value, m_number);
             if (midimap.cc[m_number] !== undefined) { // if there is a corresponding function in midimap.js, send the i2c command
                 for(let m of midimap.cc[m_number](m_value)) {
+<<<<<<< HEAD
                     //console.log(m);
+=======
+                    console.log(m);
+>>>>>>> i2cfollower
                     if (DEBUG_MIDI == false) {
                         formati2cMessage(m);
                     }
@@ -179,7 +195,11 @@ const sendi2cMessage = (message) => {
     i2c1.closeSync(); 
 }
 
+<<<<<<< HEAD
 // Hans i2c follower test
+=======
+// Hans ii follower test
+>>>>>>> i2cfollower
 
 const pi = require('pigpio-client').pigpio('localhost'); // localhost:8888
 // const s = require('debug')('i2c_slave');
@@ -210,10 +230,21 @@ console.log(data);}
 // write data to the BSC Tx FIFO
 if (data.length) {
 [count, ...bsc_stat] = await pi.bscI2C(follower_addr, data);
+<<<<<<< HEAD
 console.log(bsc_stat);
 // test send midi
+=======
+console.log("Teletype says: " + data);
+//console.log(bsc_stat);
+
+// test send midi for each ii message received (temporary)
+>>>>>>> i2cfollower
 output.sendMessage([144, 22, 1]);
 }
 });
 
+<<<<<<< HEAD
 }).catch(console.error);
+=======
+}).catch(console.error);
+>>>>>>> i2cfollower
