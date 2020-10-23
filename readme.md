@@ -11,6 +11,10 @@ This project requires the "Hans" add-on board for Raspberry Pi Zero W.
 
 ## [Log](#log)
 
+##### 23/10/20
+
+Testing REV C PCB
+
 ##### 20/09/2020
 
 REV C PCB almost ready for production. Removed the MIDI "Thru" output. Replaced the hex-inverter with a single non-inverting buffer. Removed the duplicate row of "hardware I2c GPIO 2& 3" and added a row for "I2c following" mode (SPI1)
