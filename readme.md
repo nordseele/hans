@@ -13,7 +13,7 @@ This project requires the "Hans" add-on board for Raspberry Pi Zero W.
 
 ##### 25/10/20
 
-Hardware successfully tested. Although the node.js system is functionnal (not optimized) I'm currently rewriting the whole code in Rust!
+Hardware successfully tested. Although the actual node.js system is functionnal (even if it's far from clean and optimized, I've decided to move to another language and I'm currently rewriting the whole app in Rust.
 
 ##### 23/10/20
 
