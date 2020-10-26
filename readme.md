@@ -11,6 +11,10 @@ This project requires the "Hans" add-on board for Raspberry Pi Zero W.
 
 ## [Log](#log)
 
+##### 25/10/20
+
+Hardware successfully tested. Although the node.js system is functionnal (not optimized) I'm currently rewriting the whole code in Rust!
+
 ##### 23/10/20
 
 Testing REV C PCB
