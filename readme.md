@@ -13,7 +13,7 @@ This project requires the "Hans" add-on board for Raspberry Pi Zero W.
 
 ##### 25/10/20
 
-Hardware successfully tested. Although the actual node.js system is functionnal (even if it's far from clean and optimized, I've decided to move to another language and I'm currently rewriting the whole app in Rust.
+Hardware successfully tested. Although the actual node.js system is functionnal (even if it's far from clean and optimized), I've decided to move to another language and I'm currently rewriting the whole app in Rust!
 
 ##### 23/10/20
 
@@ -59,7 +59,8 @@ Prototype PCB design ready to be sent for production. It features a double i2c I
 - [x] Custom hardware PCB (double i2c bus, pull-up resistors and power (w/ pwr protection) from the 5V rail of a Eurorack case)
 - [X] Serial midi IO on the hat
 - [X] MIDI over USB
-- [ ] i2C follower on separate bus
+- [X] i2C follower on separate bus
+
 #### Under consideration:
 
 - [ ] Support for more "followers" modules (Disting EX, W/, Ansible and Crow), technically, already possible but the commands need to be added to commands.js.
