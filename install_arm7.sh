@@ -12,6 +12,11 @@ sudo ln -s /usr/bin/npm /usr/local/bin/npm
 
 cd && git clone https://github.com/nordseele/hans.git
 
+cd && git clone https://github.com/nordseele/ttymidi.git
+cd ttymidi
+make
+sudo make install
+
 sudo cp /home/pi/hans/hans.service /etc/systemd/system
 
 sudo systemctl enable hans
@@ -19,14 +24,16 @@ sudo systemctl enable hans
 sudo apt-get install libdbus-1-dev libglib2.0-dev libudev-dev libical-dev libreadline-dev libasound2-dev pigpio -y
 wget https://github.com/antiprism/amidiauto/releases/download/v1.01Raspbian/amidiauto-1.01_buster.deb
 sudo apt install ./amidiauto-1.01_buster.deb
-sudo cp amidiauto.conf /etc/amidiauto.conf
+sudo cp /home/pi/hans/amidiauto.conf /etc/amidiauto.conf
 sudo systemctl enable amidiauto
 sudo cp mod-ttymidi.service /etc/systemd/system/mod-ttymidi.service
 sudo systemctl enable mod-ttymidi.service
+sudo cp /home/pi/hans/cmdline.txt /boot
 
 wget https://raw.githubusercontent.com/joan2937/pigpio/master/util/pigpiod.service
-sudo cp pigpiod.service /etc/systemd/system
+sudo cp /home/pi/hans/pigpiod.service /etc/systemd/system
 sudo systemctl enable pigpiod.service
+
 
 sudo raspi-config nonint do_i2c 0
 sudo sh -c "echo 'dtoverlay=i2c-gpio,bus=3,i2c_gpio_delay_us=2,i2c_gpio_sda=5,i2c_gpio_scl=6' >> /boot/config.txt"
