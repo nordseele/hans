@@ -28,7 +28,7 @@ sudo cp /home/pi/hans/amidiauto.conf /etc/amidiauto.conf
 sudo systemctl enable amidiauto
 sudo cp mod-ttymidi.service /etc/systemd/system/mod-ttymidi.service
 sudo systemctl enable mod-ttymidi.service
-sudo cp /home/pi/hans/cmdline.txt /boot
+sudo sed -i 's/console=serial0,115200 //' /boot/cmdline.txt
 
 wget https://raw.githubusercontent.com/joan2937/pigpio/master/util/pigpiod.service
 sudo cp /home/pi/hans/pigpiod.service /etc/systemd/system
