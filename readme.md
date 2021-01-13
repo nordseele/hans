@@ -3,7 +3,9 @@
 
 ## [Status](#status)
 
-This codebase has been completely replaced by a Rust version. This Node.js project is deprecated. Hardware REV C fully tested and working. 
+This codebase was replaced by a Rust version. (fully working and tested) 
+
+This Node.js version of the project is now deprecated. Hardware REV C fully tested and working.
 
 This project requires the "Hans" add-on board for Raspberry Pi Zero W.
 
@@ -12,7 +14,7 @@ This project requires the "Hans" add-on board for Raspberry Pi Zero W.
 
 ##### 13/01/2021
 
-This codebase has been completely replaced by a Rust version. This Node.js project is deprecated. Hardware REV C fully tested and working. 
+This codebase is now completely replaced by a Rust version. This Node.js version of the project is now deprecated. Hardware REV C fully tested and working. 
 
 ##### 25/10/20
 
