@@ -3,13 +3,16 @@
 
 ## [Status](#status)
 
-🚧 Work in progress.
-
-This project is still a work in progress and is partially published here as a "proof of concept" and not as a set of instructions to follow.
+This codebase has been completely replaced by a Rust version. This Node.js project is deprecated. Hardware REV C fully tested and working. 
 
 This project requires the "Hans" add-on board for Raspberry Pi Zero W.
 
 ## [Log](#log)
+
+
+##### 13/01/2021
+
+This codebase has been completely replaced by a Rust version. This Node.js project is deprecated. Hardware REV C fully tested and working. 
 
 ##### 25/10/20
 
