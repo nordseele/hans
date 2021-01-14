@@ -1,20 +1,18 @@
 ![Hans_revB](/docs/images/hans.png)
 ###### *Hans add-on board Rev B & Raspberry Pi Zero W*
 
-## [Status](#status)
-
-This codebase was replaced by a Rust version. (fully working and tested) 
-
-This Node.js version of the project is now deprecated. Hardware REV C fully tested and working.
-
-This project requires the "Hans" add-on board for Raspberry Pi Zero W.
 
 ## [Log](#log)
+ 
 
+##### 14/01/2021
+
+Repository and project re-organization.
 
 ##### 13/01/2021
 
-This codebase is now completely replaced by a Rust version. This Node.js version of the project is now deprecated. Hardware REV C fully tested and working. 
+Hardware REV C fully tested and working.
+This codebase was completely replaced by a Rust version. The Node.js version of the project is deprecated. 
 
 ##### 25/10/20
 
@@ -64,7 +62,7 @@ Prototype PCB design ready to be sent for production. It features a double i2c I
 - [x] Custom hardware PCB (double i2c bus, pull-up resistors and power (w/ pwr protection) from the 5V rail of a Eurorack case)
 - [X] Serial midi IO on the hat
 - [X] MIDI over USB
-- [X] i2C follower on separate bus
+- [X] i2C follower on separate bus (Messages received from Monome Teletype via i2c converted to MIDI - BETA)
 
 #### Under consideration:
 
