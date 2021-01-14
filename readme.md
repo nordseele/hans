@@ -45,6 +45,7 @@ Hans is an add-on board made for the Raspberry Pi Zero W. It is powered from the
 - [ ] Support for more "followers" modules (Disting EX, W/, Ansible and Crow), technically, already possible but the commands need to be added to commands.js.
 - [ ] Web interface (Settings)
 - [ ] Support for "getters" commands
+- [ ] Host and trigger custom scripts
 
 ## [Log](#log)
  
