@@ -1,20 +1,18 @@
 ![Hans_revB](/docs/images/hans.png)
 ###### *Hans add-on board Rev B & Raspberry Pi Zero W*
 
-## [Status](#status)
-
-This codebase was replaced by a Rust version. (fully working and tested) 
-
-This Node.js version of the project is now deprecated. Hardware REV C fully tested and working.
-
-This project requires the "Hans" add-on board for Raspberry Pi Zero W.
 
 ## [Log](#log)
 
 
+##### 14/01/2021
+
+Repository and project re-organization.
+
 ##### 13/01/2021
 
-This codebase is now completely replaced by a Rust version. This Node.js version of the project is now deprecated. Hardware REV C fully tested and working. 
+Hardware REV C fully tested and working.
+This codebase was completely replaced by a Rust version. The Node.js version of the project is deprecated. 
 
 ##### 25/10/20
 
