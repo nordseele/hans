@@ -1,6 +1,22 @@
 ![Hans_revB](/docs/images/hans.png)
 ###### *Hans add-on board Rev B & Raspberry Pi Zero W*
 
+
+
+## [Description](#description)
+
+Hans is an add-on board made for the Raspberry Pi Zero W. It is powered from the 5V rail of a Eurorack case. 
+
+Control ER-301 and TXo via MIDI (Serial, USB and Bluetooth) and OSC. Send MIDI from Monome Teletype. Use it as a standalone MIDI processor or as an OSC to MIDI converter.
+
+### Technical details:
+
+- A serial MIDI input and output. 
+
+- Two i2c busses on which Hans acts as a leader. 
+
+- A third bus on which Hans acts as a follower and thus can be used for converting i2c messages received from Teletype to MIDI. 
+
 ## [Status](#status)
 
 
