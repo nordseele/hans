@@ -1,0 +1,9 @@
+[submodule "hans_rust"]
+	path = hans_rust
+	url = https://github.com/nordseele/hans_rust.git
+[submodule "hans_install"]
+	path = hans_install
+	url = https://github.com/nordseele/hans_install.git
+[submodule "hans_ii_midi_c"]
+	path = hans_ii_midi_c
+	url = https://github.com/nordseele/hans_ii_midi_c.git
