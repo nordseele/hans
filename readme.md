@@ -1,6 +1,29 @@
 ![Hans_revB](/docs/images/hans.png)
 ###### *Hans add-on board Rev B & Raspberry Pi Zero W*
 
+## [Status](#status)
+
+
+#### Achieved:
+
+- [x] OSC over UDP implementation (receiver), conversion to i2c, full set of ii commands.
+- [x] Switch between Hotspot and other network via captive portal or cli
+- [x] Bluetooth LE MIDI with custom mapping file 
+- [x] Custom functions triggered by Midi (in Midimap.js) 
+- [x] Custom hardware PCB (double i2c bus, pull-up resistors and power (w/ pwr protection) from the 5V rail of a Eurorack case)
+- [X] Serial midi IO on the hat
+- [X] MIDI over USB
+- [X] i2C follower on separate bus (Messages received from Monome Teletype via i2c converted to MIDI - BETA)
+
+#### In progress: 
+
+- [ ] Full MIDI to i2c mapping
+
+#### Under consideration:
+
+- [ ] Support for more "followers" modules (Disting EX, W/, Ansible and Crow), technically, already possible but the commands need to be added to commands.js.
+- [ ] Web interface (Settings)
+- [ ] Support for "getters" commands
 
 ## [Log](#log)
  
@@ -50,25 +73,6 @@ PCB sent to production.
 
 Prototype PCB design ready to be sent for production. It features a double i2c IO (regular hardware IO + software i2c on another set of GPIO) and a "safe" 5V input.
 
-## [Tracker](#tracker)
-
-
-#### In progress:
-
-- [x] OSC over UDP implementation (receiver), conversion to i2c, full set of ii commands.
-- [x] Switch between Hotspot and other network via captive portal or cli
-- [x] Bluetooth LE MIDI with custom mapping file 
-- [x] Custom functions triggered by Midi (in Midimap.js) 
-- [x] Custom hardware PCB (double i2c bus, pull-up resistors and power (w/ pwr protection) from the 5V rail of a Eurorack case)
-- [X] Serial midi IO on the hat
-- [X] MIDI over USB
-- [X] i2C follower on separate bus (Messages received from Monome Teletype via i2c converted to MIDI - BETA)
-
-#### Under consideration:
-
-- [ ] Support for more "followers" modules (Disting EX, W/, Ansible and Crow), technically, already possible but the commands need to be added to commands.js.
-- [ ] Web interface (Settings)
-- [ ] Support for "getters" commands
 
 
 
