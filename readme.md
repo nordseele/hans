@@ -5,9 +5,14 @@
 
 ## [Description](#description)
 
-Hans is an add-on board made for the Raspberry Pi Zero W. It is powered from the 5V rail of a Eurorack case. 
+Hans is an add-on board made for the Raspberry Pi Zero W. It is powered from the 5V rail of a Eurorack case.
 
-Use it to control ER-301 and TXo via MIDI (Serial, USB and Bluetooth) and OSC. Send MIDI from Monome Teletype. Use it as a standalone MIDI processor or as an OSC to MIDI converter.
+### Features:
+
+- Control the ER-301 and TXo Eurorack modules via MIDI (Serial, USB and Bluetooth) and OSC. 
+- Send MIDI from Monome Teletype.
+- Use it as a standalone MIDI processor or as an OSC to MIDI converter.
+- ...
 
 ### Technical details:
 
