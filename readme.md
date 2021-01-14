@@ -8,15 +8,15 @@
 
 - [x] OSC over UDP implementation (receiver), conversion to i2c, full set of ii commands.
 - [x] Switch between Hotspot and other network via captive portal or cli
-- [x] Bluetooth LE MIDI with custom mapping file 
-- [x] Custom functions triggered by Midi (in Midimap.js) 
+- [x] Bluetooth LE MIDI input
 - [x] Custom hardware PCB (double i2c bus, pull-up resistors and power (w/ pwr protection) from the 5V rail of a Eurorack case)
-- [X] Serial midi IO on the hat
+- [X] Serial midi IO 
 - [X] MIDI over USB
 - [X] i2C follower on separate bus (Messages received from Monome Teletype via i2c converted to MIDI - BETA)
 
 #### In progress: 
 
+- [ ] Documentation
 - [ ] Full MIDI to i2c mapping
 
 #### Under consideration:
