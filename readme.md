@@ -64,7 +64,7 @@ Prototype PCB design ready to be sent for production. It features a double i2c I
 - [x] Custom hardware PCB (double i2c bus, pull-up resistors and power (w/ pwr protection) from the 5V rail of a Eurorack case)
 - [X] Serial midi IO on the hat
 - [X] MIDI over USB
-- [X] i2C follower on separate bus
+- [X] i2C follower on separate bus (Messages received from Monome Teletype via i2c converted to MIDI - BETA)
 
 #### Under consideration:
 
