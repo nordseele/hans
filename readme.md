@@ -31,8 +31,7 @@ Hans is an add-on board made for the Raspberry Pi Zero W. It is powered from the
 #### Achieved:
 
 - [x] OSC over UDP implementation (receiver), conversion to i2c, full set of ii commands.
-- [x] Switch between Hotspot and other network via captive portal or cli
-- [x] Bluetooth LE MIDI input
+- [x] Bluetooth LE MIDI
 - [x] Custom hardware PCB (double i2c bus, pull-up resistors and power (w/ pwr protection) from the 5V rail of a Eurorack case)
 - [X] Serial midi IO 
 - [X] MIDI over USB
