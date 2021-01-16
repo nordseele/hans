@@ -1,8 +1,9 @@
-![Hans_revC](/docs/images/hans_c.jpg)
+
+![Hans_revB](/docs/images/hans.png)
 
 ###### *Hans add-on board Rev B & Raspberry Pi Zero W*
 
-
+-----
 
 ## [Description](#description)
 
@@ -53,7 +54,8 @@ Hans is an add-on board made for the Raspberry Pi Zero W. It is powered from the
 
 ![Hans_diagram](/docs/images/diagram.png)
 
-![Hans_revB](/docs/images/hans.png)
+![Hans_revC](/docs/images/hans_c.jpg)
+
 
 ## [Log](#log)
  
