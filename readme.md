@@ -7,7 +7,7 @@
 
 ## [Description](#description)
 
-Hans is an add-on board made for the Raspberry Pi Zero W. It is powered from the 5V rail of a Eurorack case. 
+Hans is an add-on board made for the Raspberry Pi Zero W. It is powered from the 5V rail of a Eurorack case. MIDI Over i2c for ER-301 etc.
 
 
 ### Features:
