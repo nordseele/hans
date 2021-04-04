@@ -12,7 +12,7 @@ Hans is an add-on board made for the Raspberry Pi Zero W. It is powered from the
 
 ### Features:
 
-- Control the **ER-301 and TXo** Eurorack modules via **MIDI and OSC** *(Serial, USB and Bluetooth MIDI)*.
+- Control the **ER-301 and TXo** Eurorack modules via **MIDI and OSC** *(Serial, USB)*.
 - Send **MIDI from Monome Teletype.**
 - Use it as a standalone MIDI processor or as an OSC to MIDI converter.
 - ...
@@ -33,7 +33,6 @@ Hans is an add-on board made for the Raspberry Pi Zero W. It is powered from the
 #### Achieved:
 
 - [x] OSC over UDP implementation (receiver), conversion to i2c, full set of ii commands.
-- [x] Bluetooth LE MIDI
 - [x] Custom hardware PCB (double i2c bus, pull-up resistors and power (w/ pwr protection) from the 5V rail of a Eurorack case)
 - [X] Serial midi IO 
 - [X] MIDI over USB
@@ -42,6 +41,7 @@ Hans is an add-on board made for the Raspberry Pi Zero W. It is powered from the
 #### In progress: 
 
 - [ ] Documentation
+- [ ] Bluetooth LE MIDI
 - [ ] Full MIDI to i2c mapping
 
 #### Under consideration:
