@@ -1,8 +1,9 @@
 
 
 
-### Status: January 2023 🔴
-See : https://github.com/nordseele/hans/discussions/10#discussioncomment-4594479
+## Status: 
+### January 2023 🔴
+- Please See : https://github.com/nordseele/hans/discussions/10#discussioncomment-4594479
 
 
 ![Hans_revB](/docs/images/hans.png)
