@@ -6,7 +6,10 @@
 
 ## Status: 
 #### January 2023 
-- 🔴 Please see: https://github.com/nordseele/hans/discussions/10#discussioncomment-4594479 
+- 🔴 Version 1 (RPI Zero W) is abandonned, no PCBs or pre-built units in stock, some componnents unavailable due to global shortage.
+
+Please see: https://github.com/nordseele/hans/discussions/10#discussioncomment-4594479 for more details.
+
 
 ## [Description](#description)
 
@@ -61,7 +64,11 @@ Hans is an add-on board made for the Raspberry Pi Zero W. It is powered from the
 
 
 ## [Log](#log)
- 
+
+##### 04/01/2023
+
+🔴 Version 1 (RPI Zero W) is abandonned, no PCBs or pre-built units in stock, some componnents unavailable due to global shortage. No plans to open-source the add-on board. V2 prototype ready for several months now but no firmware written yet. PCB also impacted by component shortage. Difficulty to find Pico W in stock. Hard to say if this project will ever get back to life.
+
 
 ##### 14/01/2021
 
