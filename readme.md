@@ -1,12 +1,12 @@
 ![Hans_revB](/docs/images/hans.png)
 
-###### *Hans add-on board Rev B & Raspberry Pi Zero W*
+###### *Hans add-on board Version 1 Rev B & Raspberry Pi Zero W*
 
 -----
 
 ## Status: 
-### January 2023 🔴
-- Please See : https://github.com/nordseele/hans/discussions/10#discussioncomment-4594479
+#### January 2023 
+- 🔴 Please see: https://github.com/nordseele/hans/discussions/10#discussioncomment-4594479 
 
 ## [Description](#description)
 
