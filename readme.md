@@ -6,7 +6,8 @@
 
 ## Status: 
 #### January 2023 
-- 🔴 Version 1 (RPI Zero W) is abandonned, no PCBs or pre-built units in stock, some componnents unavailable due to global shortage.
+- 🔴 Version 1 (running on RPI Zero W) is abandonned. No PCBs or pre-built units in stock, some componnents unavailable due to global shortage.
+V2 embedded proto ready, smaller footprint, power from 12V rail and many other improvements. No ETA yet.
 
 Please see: https://github.com/nordseele/hans/discussions/10#discussioncomment-4594479 for more details.
 
