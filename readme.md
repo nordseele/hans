@@ -5,6 +5,10 @@
 -----
 
 ## Status: 
+
+#### July 2023 
+V2 is here https://github.com/nordseele/hans_2
+
 #### January 2023 
 - 🔴 Version 1 (running on RPI Zero W) is abandonned. No PCBs or pre-built units in stock, some componnents unavailable due to global shortage.
 V2 embedded proto ready, smaller footprint, power from 12V rail and many other improvements. No ETA yet.
